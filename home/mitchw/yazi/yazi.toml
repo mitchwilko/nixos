@@ -1,0 +1,26 @@
+[opener]
+edit_in_tmux = [
+	{ run = 'if [ -n "$TMUX" ]; then tmux new-window -c "$PWD" "$EDITOR \"$@\""; else $EDITOR "$@"; fi', block = true, desc = "Edit in Tmux Tab" }
+]
+pdf-linux = [
+    { run = 'zathura "$@"', orphan = true, for = "unix" }
+]
+pdf_macos = [
+    { run = 'open -a Skim "$@"', orphan = true, for = "macos" }
+]
+image_macos = [
+	{ run = 'open -a Preview "$@"', orphan = true, for = "macos" }
+]
+
+[open]
+rules = [
+	{ url = "*.txt", use = [ "edit_in_tmux", "reveal" ] },
+	{ url = "*.{py,js,ts,rs,go,c,cpp,h,html,css,sh,json,md,toml,yaml,yml,lua}", use = "edit_in_tmux" },
+	{ mime = "text/*", use = [ "edit_in_tmux", "reveal" ] },
+	{ url = "*.pdf", use = "pdf_macos" },
+	{ mime = "image/*", use = "image_macos" }
+]
+
+[preview]
+max_width = 3000
+max_height = 3000
