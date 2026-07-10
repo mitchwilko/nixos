@@ -12,7 +12,7 @@
       ../../modules/gui/xfce.nix
       ../../modules/users
       ../../modules/networking
-      ../../modules/xrdp
+      ../../modules/remoteDesktop/x2go.nix
     ];
 
   # Bootloader.
