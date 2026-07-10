@@ -5,7 +5,6 @@
 {
   home.packages = with pkgs; [
     firefox
-    moonlight-qt
     
     # Yazi Previews
     chafa

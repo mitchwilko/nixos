@@ -12,7 +12,9 @@
       ../../modules/gui/xfce.nix
       ../../modules/users
       ../../modules/networking
-      ../../modules/remoteDesktop/x2go.nix
+      ../../modules/remoteDesktop/xrdp.nix
+      ../../modules/virtualisation/docker.nix
+      ../../modules/virtualisation/qemu.nix
     ];
 
   # Bootloader.
@@ -25,7 +27,7 @@
   services.spice-vdagentd.enable = true;
   hardware.graphics.enable = true;
 
-  networking.hostName = "qemuvm"; # Define your hostname.
+  networking.hostName = "nixvm"; # Define your hostname.
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

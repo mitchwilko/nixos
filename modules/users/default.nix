@@ -7,6 +7,12 @@
   users.users."mitchw" = {
     isNormalUser = true;
     description = "Mitch Wilkinson";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ 
+      "networkmanager" 
+      "wheel" 
+      "libvirtd"
+      "kvm"
+      "docker"
+    ];
   };
 }

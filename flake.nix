@@ -15,11 +15,11 @@
   {
     nixosConfigurations = {
 
-      qemuvm = nixpkgs.lib.nixosSystem {
+      nixvm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         modules = [
-          ./hosts/qemuvm/default.nix
+          ./hosts/nixvm/default.nix
 
           home-manager.nixosModules.home-manager
 
