@@ -14,5 +14,8 @@
     p7zip
     file
     imagemagick
+
+    # Fonts
+    nerd-fonts.fira-code
   ];
 }

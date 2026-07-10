@@ -11,7 +11,6 @@
         package = pkgs.qemu_kvm;
 
         swtpm.enable = true;
-        ovmf.enable = true;
 
         # Optional for Windows VMs
         runAsRoot = true;
@@ -27,6 +26,6 @@
     virt-viewer
     spice
     spice-gtk
-    win-virtio
+    virtio-win
   ];
 }
