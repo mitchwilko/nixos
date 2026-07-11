@@ -3,29 +3,37 @@
 { config, pkgs, ... }:
 
 {
-  # Enable the ssh agentt
-  programs.ssh.startAgent = true;
+  # Start the ssh key agenet
+  services.ssh-agent.enable = true;
 
   # Enable the SSH program module
   programs.ssh = {
     enable = true;
-    enableDefaultConfig = true; # Manages ~/.ssh/config defaults
+    enableDefaultConfig = false; # Manages ~/.ssh/config defaults
     
-    matchBlocks = {
+    settings = {
       "github.com" = {
-        hostname = "github.com";
+        Hostname = "github.com";
         # user = "git";
-        port = 443;
-        addKeysToAgent = 'yes'
-        identityFile = "~/.ssh/id_GITHUB";
+        Port = 443;
+        AddKeysToAgent = "yes";
+        IdentityFile = "~/.ssh/id_GITHUB";
       };
 
       "server.bream-betta.ts.net" = {
-        hostname = "server.bream-betta.ts.net";
+        Hostname = "server.bream-betta.ts.net";
         # user = "deploy";
-        port = 222;
-        addKeysToAgent = 'yes'
-        identityFile = "~/.ssh/id_GITEA";
+        Port = 222;
+        AddKeysToAgent = "yes";
+        IdentityFile = "~/.ssh/id_GITEA";
+      };
+
+      "mpswpi" = {
+        HostName = "pi.bream-betta.ts.net";
+        User = "mitchw";
+        IdentityFile = "~/.ssh/id_ed25519";
+        Port = 20273;
+        AddKeysToAgent = "yes";
       };
     };
   };

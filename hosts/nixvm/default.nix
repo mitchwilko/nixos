@@ -10,6 +10,7 @@
       ./hardware.nix
       ../../modules/common
       ../../modules/gui/xfce.nix
+      ../../modules/fonts
       ../../modules/users
       ../../modules/networking
       ../../modules/remoteDesktop/xrdp.nix

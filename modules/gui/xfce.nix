@@ -17,6 +17,19 @@
     variant = "";
   };
 
+  environment.xfce.excludePackages = with pkgs.xfce; [
+    xfce4-terminal
+    mousepad
+    # parole # Image Previewer
+    # ristretto # Video Previewer
+    xfce4-screenshooter
+    xfce4-taskmanager
+    xfce4-notes-plugin
+    orage # Calendaer
+    dictionary
+    xfburn # Optical CD Burner
+  ];
+
   #environment.systemPackages = with pkgs; [
   #  xorg.xinit
   #];

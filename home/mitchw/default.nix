@@ -5,10 +5,12 @@
 {
   imports = [
     ./packages.nix
+    ./ssh.nix
     ./bash
     ./tmux
     ./nvim
     ./yazi
+    ./alacritty
   ];
 
   home.username = "mitchw";
