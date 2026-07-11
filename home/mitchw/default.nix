@@ -6,6 +6,7 @@
   imports = [
     ./packages.nix
     ./ssh.nix
+    ./zsh
     ./bash
     ./tmux
     ./nvim
