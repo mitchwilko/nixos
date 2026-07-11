@@ -17,7 +17,7 @@
     variant = "";
   };
 
-  environment.xfce.excludePackages = with pkgs.xfce; [
+  environment.xfce.excludePackages = with pkgs; [
     xfce4-terminal
     mousepad
     # parole # Image Previewer
@@ -26,7 +26,7 @@
     xfce4-taskmanager
     xfce4-notes-plugin
     orage # Calendaer
-    dictionary
+    xfce4-dict
     xfburn # Optical CD Burner
   ];
 
