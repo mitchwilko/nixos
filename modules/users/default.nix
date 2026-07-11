@@ -7,6 +7,7 @@
   users.users."mitchw" = {
     isNormalUser = true;
     description = "Mitch Wilkinson";
+    shell = pkgs.zsh;
     extraGroups = [ 
       "networkmanager" 
       "wheel" 
