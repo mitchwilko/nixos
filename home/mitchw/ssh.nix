@@ -13,7 +13,7 @@
     
     settings = {
       "github.com" = {
-        Hostname = "github.com";
+        Hostname = "ssh.github.com";
         # user = "git";
         Port = 443;
         AddKeysToAgent = "yes";
