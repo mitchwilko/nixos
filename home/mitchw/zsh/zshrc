@@ -38,3 +38,15 @@ function y() {
 
 # Add Vim key bindings
 bindkey -v
+
+# Welcome Message
+# Dynamic Device Info Welcome Message
+# echo "=== Device Information ==="
+# echo "Hostname:		%m"
+# echo "OS:			$(uname -s) $(uname -r)"
+# echo "Uptime:		$(uptime | awk -F'(up|,)' '{print $2}')"
+# echo "Memory:		$(free -m | awk '/Mem:/ {printf "%s/%s MB", $3, $2}')"
+# echo "=========================="
+# echo ""
+
+fastfetch

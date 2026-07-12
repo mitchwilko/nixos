@@ -6,6 +6,9 @@
   home.packages = with pkgs; [
     firefox
     
+    # Extended Termianl Applications
+    fastfetch
+
     # Yazi Previews
     chafa
     ffmpegthumbnailer
@@ -16,6 +19,6 @@
     imagemagick
 
     # Fonts
-    nerd-fonts.fira-code
+    # nerd-fonts.fira-code
   ];
 }

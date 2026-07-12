@@ -19,16 +19,16 @@
 -- Plugins
 -- =====================================================
 
-local vim = vim
-local Plug = vim.fn['plug#']
-
-vim.call('plug#begin')
-
-Plug('itchyny/lightline.vim')
-Plug('stevearc/oil.nvim', { ['branch'] = 'nvim-0.9' })
-Plug('echasnovski/mini.icons')
-
-vim.call('plug#end')
+-- local vim = vim
+-- local Plug = vim.fn['plug#']
+-- 
+-- vim.call('plug#begin')
+-- 
+-- Plug('itchyny/lightline.vim')
+-- Plug('stevearc/oil.nvim', { ['branch'] = 'nvim-0.9' })
+-- Plug('echasnovski/mini.icons')
+-- 
+-- vim.call('plug#end')
 
 -- =====================================================
 -- Set default visual basis
@@ -97,19 +97,6 @@ vim.g.lightline = {
 }
 
 -- =====================================================
--- Netrw Configs
--- =====================================================
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "netrw",
-  callback = function()
-    vim.opt_local.relativenumber = true
-  end,
-})
-vim.g.netrw_keepdir = 1
-vim.g.netrw_browse_split = 0
--- vim.g.netrw_winsize = 25
-
--- =====================================================
 -- Oil Configs
 -- =====================================================
 
@@ -139,37 +126,22 @@ require("oil").setup({
 -- Open parent directory of current file (replaces :Explore / :Ex)
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory in Oil' })
 
--- -- Open oil in a floating window (optional, nice alternative to netrw split)
--- vim.keymap.set('n', '<leader>e', function()
---   require('oil').toggle_float()
--- end, { desc = 'Toggle Oil float' })
-
 -- Vertical/horizontal split equivalents to :Vexplore / :Sexplore
 vim.keymap.set('n', "<C-w>%", '<CMD>vsplit | Oil<CR>', { desc = 'Open Oil in vertical split' })
 vim.keymap.set('n', '<C-w>\"', '<CMD>split | Oil<CR>', { desc = 'Open Oil in horizontal split' })
 
 -- =====================================================
--- Vimtex setup (kept minimal, matching original)
+-- Markdown Renderer Configs
 -- =====================================================
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "tex",
---   callback = function()
---     vim.opt_local.tabstop = 4
---     vim.opt_local.shiftwidth = 4
---     vim.opt_local.softtabstop = 4
---     vim.opt_local.expandtab = true
---   end,
--- })
--- vim.g.vimtex_enabled = 1
--- vim.cmd("syntax enable")
--- vim.g.vimtex_compiler_enabled = 0
--- vim.g.vimtex_view_enabled = 0
--- vim.g.vimtex_motion_enabled = 0
--- vim.g.vimtex_text_obj_enabled = 0
--- vim.g.vimtex_completion_enabled = 0
--- vim.g.vimtex_indent_enabled = 0
--- vim.g.vimtex_toc_enabled = 0
--- vim.g.vimtex_matchparen_enabled = 0
+
+require("render-markdown").setup({})
+
+vim.keymap.set(
+    "n",
+    "<leader>mr",
+    "<cmd>RenderMarkdown toggle<CR>",
+    { desc = "Toggle Markdown rendering" }
+)
 
 -- =====================================================
 -- Comment Colour Toggle Function
