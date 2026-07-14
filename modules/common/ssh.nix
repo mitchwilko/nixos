@@ -8,6 +8,7 @@
   services.openssh = {
     enable = true;
     openFirewall = true;
+    ports = [ 20273 ];
     settings = {
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
