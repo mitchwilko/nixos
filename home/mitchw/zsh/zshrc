@@ -49,4 +49,7 @@ bindkey -v
 # echo "=========================="
 # echo ""
 
-fastfetch
+# Only run fastfetch if NOT inside a tmux session
+if [ -z "$TMUX" ]; then
+    fastfetch
+fi
