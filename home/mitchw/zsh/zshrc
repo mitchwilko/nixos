@@ -27,6 +27,9 @@ export TERM=xterm-256color
 export EDITOR="vim" # Or "vim"
 export VISUAL="vim"
 
+# Configure openning for tmux
+alias t='tmux attach-session || tmux new-session'
+
 # Configuration for Yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

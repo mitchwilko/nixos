@@ -12,6 +12,7 @@
     ./nvim
     ./yazi
     ./alacritty
+    ./fastfetch
   ];
 
   home.username = "mitchw";

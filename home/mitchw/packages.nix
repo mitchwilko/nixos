@@ -7,7 +7,6 @@
     firefox
     
     # Extended Termianl Applications
-    fastfetch
 
     # Yazi Previews
     chafa
