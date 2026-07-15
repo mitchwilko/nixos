@@ -159,6 +159,7 @@ call s:hl("Todo",		 "yellow", "none", "bold")
 call s:hl("Keyword",	 "bright",	  "none")
 call s:hl("Delimiter",	 "white",  "none")
 call s:hl("SpecialComment", "amber", "none", "bold")
+call s:hl("Whitespace", "dim", "none")
 
 hi! link Boolean	   Constant
 hi! link Character	   Constant

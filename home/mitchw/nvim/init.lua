@@ -77,14 +77,17 @@ vim.opt.shiftwidth = 4      -- Set auto-indent width to 4 spaces
 
 vim.opt.listchars = { tab = "├─>" }
 vim.opt.list = true
+-- vim.api.nvim_set_hl(0, "Whitespace", {
+-- fg = vim.g.atlas_colors["dim"]
+--})
 
 -- =====================================================
 -- Default opening of splits
 -- =====================================================
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.keymap.set('n', "<C-w>n", ':tabnext<CR>', { desc = 'Move to Next Tab' })
-vim.keymap.set('n', "<C-w>p", ':tabprevious<CR>', { desc = 'Move to Previous Tab' })
+vim.keymap.set('n', "<C-w>n", ':bnext<CR>', { desc = 'Move to Next Buffer' })
+vim.keymap.set('n', "<C-w>p", ':bprevious<CR>', { desc = 'Move to Previous Buffer' })
 
 -- Automatically save things sometimes (eg on make)
 vim.opt.autowrite = true

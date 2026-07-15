@@ -22,8 +22,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Virtualisation Settings
-
   networking.hostName = "mpswserver"; # Define your hostname.
 
   # This value determines the NixOS release from which the default

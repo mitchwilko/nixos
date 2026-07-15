@@ -3,13 +3,19 @@
 { pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    # xinit
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm.enable = false;
   services.displayManager.autoLogin.enable = false;
   services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.displayManager.startx.enable = true;
+  # services.xserver.displayManager.startx.generateScript = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -29,10 +35,6 @@
     xfce4-dict
     xfburn # Optical CD Burner
   ];
-
-  #environment.systemPackages = with pkgs; [
-  #  xorg.xinit
-  #];
 
   # Autologin required for sunshine
   # services.displayManager.autoLogin = {
