@@ -1,10 +1,3 @@
-" Simple vifm config
-
-only
-set vicmd=nvim
-set number
-set relativenumber
-
 " vim: filetype=vifm :
 "
 " Sample configuration file for vifm (last updated: 11 May, 2025)
@@ -36,21 +29,21 @@ set relativenumber
 " Main settings
 " ------------------------------------------------------------------------------
 
-" " Command used to edit files in various contexts.  The default is vim.
-" " If you would like to use another vi clone such as Elvis or Vile
-" " you will need to change this setting.
-" if executable('vim')
-"     set vicmd=vim
-" elseif executable('nvim')
-"     set vicmd=nvim
-" elseif executable('elvis')
-"     set vicmd=elvis\ -G\ termcap
-" elseif executable('vile')
-"     set vicmd=vile
-" elseif $EDITOR != ''
-"     echo 'Note: using `'.$EDITOR.'` as an editor'
-"     let &vicmd = $EDITOR
-" endif
+" Command used to edit files in various contexts.  The default is vim.
+" If you would like to use another vi clone such as Elvis or Vile
+" you will need to change this setting.
+if executable('vim')
+    set vicmd=vim
+elseif executable('nvim')
+    set vicmd=nvim
+elseif executable('elvis')
+    set vicmd=elvis\ -G\ termcap
+elseif executable('vile')
+    set vicmd=vile
+elseif $EDITOR != ''
+    echo 'Note: using `'.$EDITOR.'` as an editor'
+    let &vicmd = $EDITOR
+endif
 
 " This makes vifm perform file operations on its own instead of relying on
 " standard utilities like `cp`.  While using `cp` and alike is a more universal
@@ -65,11 +58,10 @@ set syscalls
 " I recommend not changing this until you are familiar with vifm.
 " This probably shouldn't be an option.
 set trash
-set trashdir=~/.local/share/vifm/trash
 
 " What should be saved automatically on restarting vifm.  Drop "savedirs"
 " value if you don't want vifm to remember last visited directories for you.
-set vifminfo=dhistory,chistory,state,tui,tabs,shistory,ehistory,
+set vifminfo=dhistory,savedirs,chistory,state,tui,tabs,shistory,ehistory,
             \phistory,fhistory,dirstack,registers,bookmarks,bmarks,mchistory
 
 " This is size of all of the many kinds of histories, in particular it's the
@@ -130,14 +122,10 @@ endif
 
 " Set custom status line look
 if !has('win')
-	set statusline="  %d%=%A  %10u  %-7g  %15s  %E  "
+    set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 else
-	set statusline="  %d%=%A  %10u  %-7g  %15s  %E  "
+    set statusline="  Hint: %z%= %A %15s %20d  "
 endif
-"set statusline="  %A %10u:%-7g %15s  %E  %d  "
-"set rulerformat="%l/%S "
-set viewcolumns=-{name},6{size},12{perms},16{mtime}
-set sizefmt=usespaces,base:10
 
 " Suppress "Permission denied" errors using syntax specific to GNU find
 if system("find --version | grep -c 'GNU findutils'") != 0
@@ -498,17 +486,6 @@ filextype */
 " ------------------------------------------------------------------------------
 " Sample keyboard mappings
 " ------------------------------------------------------------------------------
-
-" Split remapping
-nnoremap <C-w>% :vsplit<CR>
-nnoremap <C-w>" :split<CR>
-nnoremap <C-w>c :!tmux new-window -c %d<CR>
-
-" Oil Remapping
-nnoremap - :!nvim %d<CR>
-
-" Dot files remap
-nnoremap . za
 
 " Start shell in current directory
 nnoremap s :shell<cr>

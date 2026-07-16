@@ -16,9 +16,9 @@
       # render-markdown-nvim
   
       # Dependencies
-      # (nvim-treesitter.withPlugins (plugins: with plugins; [
-      #   tree-sitter-latex
-      # ]))
+      (nvim-treesitter.withPlugins (plugins: with plugins; [
+        tree-sitter-latex
+      ]))
     ];
   };
 
