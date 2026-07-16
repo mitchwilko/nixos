@@ -37,7 +37,6 @@
         "battery"
         "poweradapter"
         "locale"
-        "colors"
       ];
     };
   };

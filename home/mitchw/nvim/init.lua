@@ -80,6 +80,10 @@ vim.opt.list = true
 -- vim.api.nvim_set_hl(0, "Whitespace", {
 -- fg = vim.g.atlas_colors["dim"]
 --})
+vim.api.nvim_set_hl(0, "Whitespace", {
+  fg = vim.g.atlas_colors["dim"][1],
+  ctermfg = vim.g.atlas_colors["dim"][2],
+})
 
 -- =====================================================
 -- Default opening of splits
@@ -119,7 +123,7 @@ require("oil").setup({
     -- "size",
     -- "mtime",
   },
-  skip_confirm_for_simple_edits = false,
+  skip_confirm_for_simple_edits = true,
   watch_for_changes = true
 })
 
@@ -137,14 +141,14 @@ vim.keymap.set('n', '<C-w>\"', '<CMD>split | Oil<CR>', { desc = 'Open Oil in hor
 -- Markdown Renderer Configs
 -- =====================================================
 
-require("render-markdown").setup({})
-
-vim.keymap.set(
-    "n",
-    "<leader>mr",
-    "<cmd>RenderMarkdown toggle<CR>",
-    { desc = "Toggle Markdown rendering" }
-)
+-- require("render-markdown").setup({})
+-- 
+-- vim.keymap.set(
+--     "n",
+--     "<leader>mr",
+--     "<cmd>RenderMarkdown toggle<CR>",
+--     { desc = "Toggle Markdown rendering" }
+-- )
 
 -- =====================================================
 -- Comment Colour Toggle Function

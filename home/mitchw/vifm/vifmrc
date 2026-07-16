@@ -1,0 +1,102 @@
+" ~/.config/vifm/vifmrc
+" ============================================================
+" General behavior
+" ============================================================
+set nowrapscan
+set trash
+set trashdir=~/.local/share/vifm/trash
+set history=1000
+set undolevels=100
+set vicmd=nvim
+set vixcmd=nvim
+set sortnumbers
+set followlinks
+set gdefault
+set scrolloff=4
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set wildmenu
+set wildstyle=popup
+set timefmt="%Y-%m-%d %H:%M"
+set fusehome=/tmp/vifm_fuse
+set slowfs=curlftpfs
+
+" Remember last location, sort by name first (dirs first)
+set sortorder=ascending
+set sort=+iname
+set dirsize=nitems
+
+" ============================================================
+" Appearance — yazi/ranger style three-column Miller view
+" ============================================================
+set number
+set relativenumber
+set numberwidth=3
+set tabstop=2
+set classify=' :dir:/, :exec:, :link:, :fifo:|, :sock:='
+set millerview
+set milleroptions=lsize:1,csize:2,rsize:3
+set previewoptions=graphicsdelay:2
+
+set statusline="  %A %10u:%-7g %15s  %d  "
+set rulerformat="%l/%S "
+
+" colorscheme myscheme Default-256
+
+" ============================================================
+" File type actions (open with) — default programs
+" ============================================================
+filetype *.pdf zathura %c &
+filetype *.jpg,*.jpeg,*.png,*.gif,*.bmp,*.webp feh %c &
+filetype *.mp4,*.mkv,*.webm,*.avi mpv %c &
+filetype *.mp3,*.flac,*.wav mpv --no-video %c &
+filetype *.zip,*.tar,*.tar.gz,*.tgz,*.tar.bz2,*.tar.xz,*.rar,*.7z
+    \ {Extract here} tar -xf %c &
+
+" Everything else opens in nvim
+filextype * nvim %f
+
+" ============================================================
+" oil.nvim integration: "-" opens the CURRENT directory in oil.nvim
+" (mirrors oil.nvim's own "-" mapping for going up a directory)
+" ============================================================
+nnoremap - :!nvim -c "Oil %d" <CR>
+
+" Open the file under the cursor directly in nvim (normal edit)
+nnoremap e :!nvim %f <CR>
+nnoremap <CR> :!nvim %f <CR>
+
+" ============================================================
+" Bookmarks
+" ============================================================
+mark h ~/
+mark c ~/.config/
+mark d ~/Downloads/
+mark n ~/.config/nvim/
+mark v ~/.config/vifm/
+
+" ============================================================
+" Misc keybindings
+" ============================================================
+nnoremap <C-l> :nohlsearch<CR>
+nnoremap H gg
+nnoremap L G
+nnoremap dd :delete<CR>
+nnoremap dD :delete!<CR>
+nnoremap gh :edit ~<CR>
+nnoremap w :!chmod +x %f<CR>
+
+" Toggle showing hidden/dot files with '.'
+nnoremap . za
+
+" Yank absolute path of file under cursor to system clipboard
+nnoremap yf :!echo -n %c:p | xclip -selection clipboard -i %i<CR>
+
+" ============================================================
+" Terminal / shell integration
+" ============================================================
+"set shell=/bin/bash
+"set trunctesymbol='…'
+

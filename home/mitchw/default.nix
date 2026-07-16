@@ -13,6 +13,7 @@
     ./yazi
     ./alacritty
     ./fastfetch
+    ./vifm
   ];
 
   home.username = "mitchw";

@@ -13,12 +13,12 @@
       lightline-vim
       oil-nvim
       mini-icons
-      render-markdown-nvim
+      # render-markdown-nvim
   
       # Dependencies
-      (nvim-treesitter.withPlugins (plugins: with plugins; [
-        tree-sitter-latex
-      ]))
+      # (nvim-treesitter.withPlugins (plugins: with plugins; [
+      #   tree-sitter-latex
+      # ]))
     ];
   };
 
