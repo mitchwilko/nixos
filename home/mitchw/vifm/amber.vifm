@@ -30,13 +30,13 @@ hi CmpMismatch  cterm=bold                    ctermfg=white    ctermbg=88
 hi CmpUnmatched cterm=bold                    ctermfg=white    ctermbg=28
 hi CmpBlank                                   ctermfg=default  ctermbg=default
 
-hi SuggestBox   cterm=bold,reverse            ctermfg=166      ctermbg=232
+hi SuggestBox   cterm=bold,reverse            ctermfg=208      ctermbg=232
 hi WildMenu     cterm=underline,bold,reverse  ctermfg=yellow   ctermbg=black
 
 hi CmdLine      cterm=bold                    ctermfg=white    ctermbg=232
 hi ErrorMsg     cterm=bold                    ctermfg=white    ctermbg=red
 
-hi Directory    cterm=bold                    ctermfg=166      ctermbg=default
+hi Directory    cterm=bold                    ctermfg=208      ctermbg=default
 hi Executable   cterm=bold                    ctermfg=119      ctermbg=default
 hi Socket       cterm=bold,reverse            ctermfg=182      ctermbg=default
 hi Device       cterm=bold,reverse            ctermfg=204      ctermbg=default
