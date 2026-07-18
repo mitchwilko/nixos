@@ -8,14 +8,14 @@
     
     # Extended Termianl Applications
 
-    # Yazi Previews
-    chafa
-    ffmpegthumbnailer
-    poppler
-    jq
-    p7zip
-    file
-    imagemagick
+    # # Yazi Previews
+    # chafa
+    # ffmpegthumbnailer
+    # poppler
+    # jq
+    # p7zip
+    # file
+    # imagemagick
 
     # Fonts
     # nerd-fonts.fira-code

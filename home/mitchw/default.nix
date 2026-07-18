@@ -10,7 +10,7 @@
     ./bash
     ./tmux
     ./nvim
-    ./yazi
+    # ./yazi
     ./alacritty
     ./fastfetch
     ./vifm
