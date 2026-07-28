@@ -4,14 +4,7 @@
 
 {
   imports = [
-    ./ssh.nix
-    ./zsh
-    ./bash
-    ./tmux
-    ./nvim
-    # ./yazi
-    ./fastfetch
-    ./vifm
+    ./common
   ];
 
   home.username = "mitchw";
