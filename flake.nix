@@ -9,7 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-generators.url = "github:nix-community/nixos-generators";
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   }; 
 
   outputs = { self, nixpkgs, home-manager, nixos-generators, ... }:
@@ -51,6 +54,7 @@
               imports = [
                 ./home/mitchw
                 ./home/mitchw/gui-packages
+                ./home/mitchw/cli-packages
               ];
             };
           }

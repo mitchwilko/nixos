@@ -1,15 +1,17 @@
-{ config, pkgs, ... }:
+{ config, pkgs, modulesPath, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
-      "${modulesPath}/virtualisation/digital-ocean-config.nix"
+      # "${modulesPath}/virtualisation/digital-ocean-config.nix"
       ../../modules/common
       ../../modules/users
       ../../modules/networking
     ];
 
   networking.hostName = "mpswvps"; # Define your hostname.
+
+  services.qemuGuest.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
