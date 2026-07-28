@@ -8,9 +8,11 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-generators.url = "github:nix-community/nixos-generators";
   }; 
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, nixos-generators, ... }:
 
   {
     nixosConfigurations = {
@@ -55,6 +57,27 @@
         ]; 
       };
 
+      mpswvps = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        modules = [
+          ./hosts/mpswvps/default.nix
+
+          home-manager.nixosModules.home-manager
+
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.mitchw = {
+              imports = [
+                ./home/mitchw
+              ];
+            };
+          }
+        ]; 
+      };
+
       # laptop = nixpkgs.lib.nixosSystem {
       #   system = "x86_64-linux";
 
@@ -73,6 +96,28 @@
       #   ];
       # };
 
+    };
+    
+    packages.x86_64-linux = {
+      mpswvps-qcow =
+        nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          format = "qcow";
+  
+          modules = [
+            ./hosts/mpswvps/default.nix
+  
+            home-manager.nixosModules.home-manager
+  
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+  
+              home-manager.users.mitchw =
+                import ./home/mitchw;
+            }
+          ];
+        };
     };
   };
 }
