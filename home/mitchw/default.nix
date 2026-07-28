@@ -4,14 +4,12 @@
 
 {
   imports = [
-    ./packages.nix
     ./ssh.nix
     ./zsh
     ./bash
     ./tmux
     ./nvim
     # ./yazi
-    ./alacritty
     ./fastfetch
     ./vifm
   ];

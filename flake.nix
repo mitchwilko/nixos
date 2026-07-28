@@ -46,7 +46,8 @@
             home-manager.useUserPackages = true;
 
             home-manager.users.mitchw =
-              import ./home/mitchw;
+              import ./home/mitchw
+              import ./home/mitchw/gui-packages;
           }
         ]; 
       };
