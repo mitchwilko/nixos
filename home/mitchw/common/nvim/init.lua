@@ -116,7 +116,7 @@ require("oil").setup({
   view_options = {
     show_hidden = true,
   },
-  use_icons = true,
+  -- use_icons = true,
   columns = {
     "icon",
     -- "permissions",

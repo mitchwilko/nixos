@@ -6,6 +6,7 @@
   imports = [
     ./utilities.nix
     ./ssh.nix
+    ./nh.nix
   ];
   # Enable networking
   networking.networkmanager.enable = true;
