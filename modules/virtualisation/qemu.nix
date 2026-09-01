@@ -28,4 +28,12 @@
     spice-gtk
     virtio-win
   ];
+
+  networking.firewall.trustedInterfaces = [
+    "virbr0"
+  ];
+
+  users.users.YOUR_USERNAME.extraGroups = [
+    "libvirtd"
+  ];
 }

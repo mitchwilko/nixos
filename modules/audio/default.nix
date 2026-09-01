@@ -1,6 +1,5 @@
 # modules/audio.nix
-
-{ ... }
+{ ... }:
 
 {
   # Enable sound with pipewire.

@@ -13,6 +13,7 @@
       ../../modules/fonts
       ../../modules/users
       ../../modules/networking
+      ../../modules/audio
       ../../modules/remoteDesktop/xrdp.nix
       ../../modules/virtualisation/docker.nix
       ../../modules/virtualisation/qemu.nix
