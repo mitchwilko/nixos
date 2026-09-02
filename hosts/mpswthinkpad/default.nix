@@ -25,9 +25,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # boot.kernelParams = [
-  #   "video=eDP-1:d"
-  # ];
+  boot.kernelParams = [
+    "video=eDP-1:d"
+  ];
 
   services.logind.settings.Login = {
     HandleLidSwitch = "ignore";
