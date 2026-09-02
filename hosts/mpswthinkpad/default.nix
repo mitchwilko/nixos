@@ -15,6 +15,7 @@
       ../../modules/networking
       ../../modules/audio
       ../../modules/tlp
+      ../../modules/disableScreen
       ../../modules/remoteDesktop/xrdp.nix
       ../../modules/virtualisation/docker.nix
       ../../modules/virtualisation/qemu.nix
@@ -24,9 +25,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelParams = [
-    "video=eDP-1:d"
-  ];
+  # boot.kernelParams = [
+  #   "video=eDP-1:d"
+  # ];
 
   services.logind.settings.Login = {
     HandleLidSwitch = "ignore";
