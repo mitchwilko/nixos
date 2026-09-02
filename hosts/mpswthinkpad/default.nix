@@ -15,7 +15,7 @@
       ../../modules/networking
       ../../modules/audio
       ../../modules/tlp
-      ../../modules/disableScreen
+      ../../modules/screenDisable
       ../../modules/remoteDesktop/xrdp.nix
       ../../modules/virtualisation/docker.nix
       ../../modules/virtualisation/qemu.nix
