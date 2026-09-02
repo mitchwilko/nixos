@@ -61,6 +61,29 @@
         ]; 
       };
 
+      mpswthinkpad = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+
+        modules = [
+          ./hosts/mpswthinkpad/default.nix
+
+          home-manager.nixosModules.home-manager
+
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.mitchw = {
+              imports = [
+                ./home/mitchw
+                ./home/mitchw/gui-packages
+                ./home/mitchw/cli-packages
+              ];
+            };
+          }
+        ]; 
+      };
+
       mpswvps = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
