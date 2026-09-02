@@ -14,6 +14,7 @@
       ../../modules/users
       ../../modules/networking
       ../../modules/audio
+      ../../modules/tlp
       ../../modules/remoteDesktop/xrdp.nix
       ../../modules/virtualisation/docker.nix
       ../../modules/virtualisation/qemu.nix
@@ -22,6 +23,16 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.kernelParams = [
+    "video=eDP-1:d"
+  ];
+
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
+  };
 
   networking.hostName = "mpswthinkpad"; # Define your hostname.
 
