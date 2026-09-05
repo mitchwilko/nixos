@@ -35,6 +35,14 @@
         Port = 20273;
         AddKeysToAgent = "yes";
       };
+
+      "mpswthinkpad" = {
+        HostName = "thinkpad.bream-betta.ts.net";
+        User = "mitchw";
+        IdentityFile = "~/.ssh/id_ed25519";
+        Port = 20273;
+        AddKeysToAgent = "yes";
+      };
     };
   };
 }

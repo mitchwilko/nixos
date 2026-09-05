@@ -17,6 +17,11 @@
   services.xserver.displayManager.startx.enable = true;
   # services.xserver.displayManager.startx.generateScript = true;
 
+  environment.etc."X11/xinit/xinitrc".text = ''
+    #!/bin/sh
+    exec startxfce4
+  '';
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
