@@ -31,5 +31,6 @@
   users.users.mitchw.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGfB3UA0dR3neQQGyzwPT/JvQ2upFMJ0UXpQFSscgrK1 mitchw@Mitchells-MacBook-Air.local"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJxRaDdaE4K4Y4jNG6/MWXXz6C+wEHSXuyuLOxjLQ7MY"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBJA3DKga9ZdOEUpH9nIxlaNicuk89DpM51zvpm3FTAG mitchell01wilkinson@gmail.com"
   ];
 }
