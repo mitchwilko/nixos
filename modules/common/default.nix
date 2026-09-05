@@ -38,6 +38,9 @@
     "flakes"
   ];
 
+  nix.settings.secret-key-files = [ "/etc/nix/signing-key.sec" ];
+  nix.settings.trusted-public-keys = [ "mpswserver:teaiSVBljUDon8wwv4XE9ZNZiNMjuAzqHQL4CSTJraI=" ];
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 }
