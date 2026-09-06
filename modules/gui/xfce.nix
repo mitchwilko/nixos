@@ -5,6 +5,7 @@
 {
   environment.systemPackages = with pkgs; [
     # xinit
+    graphite-gtk-theme
   ];
 
   # Enable the X11 windowing system.
