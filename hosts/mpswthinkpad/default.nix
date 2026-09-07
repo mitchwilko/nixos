@@ -37,17 +37,26 @@
 
   networking.hostName = "mpswthinkpad"; # Define your hostname.
 
-  networking.interfaces.enp5s0 = {
-    wakeOnLan = {
-      enable = true;
+  networking = {
+    interfaces.enp5s0 = {
+      wakeOnLan = {
+        enable = true;
+      };
+    };
+    firewall = {
+      allowedUDPPorts = [ 9 ];
     };
   };
 
-  powerManagement.resumeCommands = ''
-    ${pkgs.ethtool}/bin/ethtool -s enp5s0 wol g
-  '';
-}
-
+  systemd.services.enable-wol = {
+    description = "Enable Wake-on-LAN";
+    wantedBy = [ "multi-user.target" ];
+  
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.ethtool}/bin/ethtool -s enp5s0 wol g";
+    };
+  };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
