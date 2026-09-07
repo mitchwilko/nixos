@@ -3,12 +3,26 @@
 { pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    (zathura.override {
-      plugins = with zathuraPkgs; [
-        zathura_pdf_mupdf # For PDF support
-        zathura_cb        # For Comic book support (optional)
+  programs.zathura = {
+    enable = true;
+
+    package = pkgs.zathura.override {
+      plugins = with pkgs.zathuraPkgs; [
+        zathura_pdf_mupdf
+        zathura_cb
       ];
-    })
-  ];
+    };
+
+    options = {
+      selection-clipboard = "clipboard";
+      recolor = true;
+      recolor-keephue = true;
+      smooth-scroll = true;
+    };
+
+    mappings = {
+      "<C-j>" = "scroll down";
+      "<C-k>" = "scroll up";
+    };
+  };
 }

@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware.nix
       ../../modules/common
-      ../../modules/gui/xfce.nix
+      ../../modules/gui/xfce_i3.nix
       ../../modules/fonts
       ../../modules/users
       ../../modules/networking
