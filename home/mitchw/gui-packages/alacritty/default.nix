@@ -11,6 +11,10 @@
     enable = true;
 
     settings = {
+      env = {
+        WINIT_X11_SCALE_FACTOR = "1";
+      };
+
       window = {
         opacity = 0.95;
 
