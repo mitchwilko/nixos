@@ -1,14 +1,14 @@
 # modules/gui/i3.nix
 
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   services.xserver = {
     enable = true;
 
     displayManager = {
-      lightdm.enable = false;
-      startx.enable = true;
+      lightdm.enable = true;
+      # startx.enable = true;
     };
 
     windowManager.i3 = {
@@ -23,15 +23,5 @@
     };
   };
 
-  # Start i3 when running `startx`
-  environment.etc."X11/xinit/xinitrc".text = ''
-    #!/bin/sh
-    exec i3
-  '';
-
-  environment.systemPackages = with pkgs; [
-    i3
-    i3status
-    dmenu
-  ];
+  services.displayManager.defaultSession = "none+i3";
 }

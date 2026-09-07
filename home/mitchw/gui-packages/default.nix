@@ -6,6 +6,7 @@
   imports = [
     ./alacritty
     ./zarthura
+    ./i3
   ];
 
   home.packages = with pkgs; [
