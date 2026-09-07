@@ -5,6 +5,7 @@
 {
   imports = [
     ./alacritty
+    ./gtk
   ];
 
   home.packages = with pkgs; [
