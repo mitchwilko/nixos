@@ -5,7 +5,7 @@
 {
   imports = [
     ./alacritty
-    ./gtk
+    ./zarthura
   ];
 
   home.packages = with pkgs; [
