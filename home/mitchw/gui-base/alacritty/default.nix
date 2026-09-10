@@ -56,7 +56,7 @@
 
       colors.cursor = {
         text = "#000000";
-        cursor = "#ffffff";
+        cursor = "#5C9DED";
       };
     };
   };
