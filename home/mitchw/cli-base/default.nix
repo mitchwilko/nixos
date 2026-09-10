@@ -10,6 +10,7 @@
     ./tmux
     ./nvim
     ./fastfetch
+    ./nh
   ];
 
   environment.systemPackages = with pkgs; [
