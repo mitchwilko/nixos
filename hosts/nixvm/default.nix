@@ -12,8 +12,6 @@
       ../../modules/common/fonts
       ../../modules/nixos
       ../../modules/nixos/gui/xfce.nix
-      ../../modules/nixos/users
-      ../../modules/nixos/networking
       ../../modules/nixos/remoteDesktop/xrdp.nix
       ../../modules/nixos/virtualisation/docker.nix
       ../../modules/nixos/virtualisation/qemu.nix

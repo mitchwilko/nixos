@@ -7,7 +7,7 @@
     [ # Include the results of the hardware scan.
       ../../modules/common
       ../../modules/common/fonts
-      ../../modules/darwin/users
+      ../../modules/darwin
       ../../modules/darwin/homebrew
     ];
 

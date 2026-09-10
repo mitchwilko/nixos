@@ -12,8 +12,6 @@
       ../../modules/common/fonts
       ../../modules/nixos
       ../../modules/nixos/gui/i3.nix
-      ../../modules/nixos/users
-      ../../modules/nixos/networking
       ../../modules/nixos/audio
       ../../modules/nixos/tlp
       ../../modules/nixos/screenDisable

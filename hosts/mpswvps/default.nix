@@ -6,8 +6,6 @@
       # "${modulesPath}/virtualisation/digital-ocean-config.nix"
       ../../common
       ../../modules/nixos
-      ../../modules/nixos/users
-      ../../modules/nixos/networking
     ];
 
   networking.hostName = "mpswvps"; # Define your hostname.
