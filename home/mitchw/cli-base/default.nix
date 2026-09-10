@@ -11,4 +11,16 @@
     ./nvim
     ./fastfetch
   ];
+
+  environment.systemPackages = with pkgs; [
+    git
+    wget
+    curl
+    htop
+    btop
+    ncdu
+    ripgrep
+    fd
+    fzf
+  ];
 }

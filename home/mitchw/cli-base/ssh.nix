@@ -12,6 +12,30 @@
     enableDefaultConfig = false; # Manages ~/.ssh/config defaults
     
     settings = {
+      "mpswserver" = {
+        HostName = "server.bream-betta.ts.net";
+        User = "mitchw";
+        IdentityFile = "~/.ssh/id_ed25519";
+        Port = 20273;
+        AddKeysToAgent = "yes";
+      };
+
+      "mpswthinkpad" = {
+        HostName = "thinkpad.bream-betta.ts.net";
+        User = "mitchw";
+        IdentityFile = "~/.ssh/id_ed25519";
+        Port = 20273;
+        AddKeysToAgent = "yes";
+      };
+
+      "mpswpi" = {
+        HostName = "pi.bream-betta.ts.net";
+        User = "mitchw";
+        IdentityFile = "~/.ssh/id_ed25519";
+        Port = 20273;
+        AddKeysToAgent = "yes";
+      };
+
       "github.com" = {
         Hostname = "ssh.github.com";
         # user = "git";
@@ -26,22 +50,6 @@
         Port = 222;
         AddKeysToAgent = "yes";
         IdentityFile = "~/.ssh/id_GITEA";
-      };
-
-      "mpswpi" = {
-        HostName = "pi.bream-betta.ts.net";
-        User = "mitchw";
-        IdentityFile = "~/.ssh/id_ed25519";
-        Port = 20273;
-        AddKeysToAgent = "yes";
-      };
-
-      "mpswthinkpad" = {
-        HostName = "thinkpad.bream-betta.ts.net";
-        User = "mitchw";
-        IdentityFile = "~/.ssh/id_ed25519";
-        Port = 20273;
-        AddKeysToAgent = "yes";
       };
     };
   };
