@@ -40,7 +40,7 @@
           style = "Italic";
         };
 
-        size = 12;
+        size = 10;
       };
 
       scrolling.history = 10000;

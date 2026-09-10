@@ -53,8 +53,9 @@
             home-manager.users.mitchw = {
               imports = [
                 ./home/mitchw
-                ./home/mitchw/gui-packages
-                ./home/mitchw/cli-packages
+                ./home/mitchw/cli-extra
+                ./home/mitchw/gui-base
+                ./home/mitchw/gui-extra
               ];
             };
           }
@@ -76,8 +77,9 @@
             home-manager.users.mitchw = {
               imports = [
                 ./home/mitchw
-                ./home/mitchw/gui-packages
-                ./home/mitchw/cli-packages
+                ./home/mitchw/cli-extra
+                ./home/mitchw/gui-base
+                ./home/mitchw/gui-extra
               ];
             };
           }

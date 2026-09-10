@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware.nix
       ../../modules/common
-      ../../modules/gui/xfce.nix
+      ../../modules/gui/i3.nix
       ../../modules/fonts
       ../../modules/users
       ../../modules/networking
@@ -17,7 +17,6 @@
       ../../modules/tlp
       ../../modules/screenDisable
       ../../modules/remoteDesktop/xrdp.nix
-      ../../modules/virtualisation/docker.nix
       ../../modules/virtualisation/qemu.nix
     ];
 
@@ -37,26 +36,26 @@
 
   networking.hostName = "mpswthinkpad"; # Define your hostname.
 
-  networking = {
-    interfaces.enp5s0 = {
-      wakeOnLan = {
-        enable = true;
-      };
-    };
-    firewall = {
-      allowedUDPPorts = [ 9 ];
-    };
-  };
+  # networking = {
+  #   interfaces.enp5s0 = {
+  #     wakeOnLan = {
+  #       enable = true;
+  #     };
+  #   };
+  #   firewall = {
+  #     allowedUDPPorts = [ 9 ];
+  #   };
+  # };
 
-  systemd.services.enable-wol = {
-    description = "Enable Wake-on-LAN";
-    wantedBy = [ "multi-user.target" ];
-  
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${pkgs.ethtool}/bin/ethtool -s enp5s0 wol g";
-    };
-  };
+  # systemd.services.enable-wol = {
+  #   description = "Enable Wake-on-LAN";
+  #   wantedBy = [ "multi-user.target" ];
+  # 
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     ExecStart = "${pkgs.ethtool}/bin/ethtool -s enp5s0 wol g";
+  #   };
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

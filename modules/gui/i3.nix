@@ -23,5 +23,15 @@
     };
   };
 
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd i3";
+  #       user = "greeter";
+  #     };
+  #   };
+  # };
+
   services.displayManager.defaultSession = "none+i3";
 }

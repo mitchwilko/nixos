@@ -4,7 +4,7 @@
 
 {
   imports = [
-    ./common
+    ./cli-base
   ];
 
   home.username = "mitchw";

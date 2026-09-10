@@ -3,7 +3,13 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./alacritty
+    ./i3
+  ];
+
   home.packages = with pkgs; [
-    bzip2
+    firefox
+    remmina
   ];
 }

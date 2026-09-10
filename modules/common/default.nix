@@ -39,7 +39,10 @@
   ];
 
   nix.settings.secret-key-files = [ "/etc/nix/signing-key.sec" ];
-  nix.settings.trusted-public-keys = [ "mpswserver:teaiSVBljUDon8wwv4XE9ZNZiNMjuAzqHQL4CSTJraI=" ];
+  nix.settings.trusted-public-keys = [ 
+    "mpswserver:teaiSVBljUDon8wwv4XE9ZNZiNMjuAzqHQL4CSTJraI="
+    "mpswthinkpad:PIvTxwkPtlndAAZLiSllQO36MZ6YUk2/SfuIEPSRAIg="
+  ];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

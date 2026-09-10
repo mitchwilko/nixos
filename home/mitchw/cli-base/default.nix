@@ -9,8 +9,6 @@
     ./bash
     ./tmux
     ./nvim
-    # ./yazi
     ./fastfetch
-    ./vifm
   ];
 }

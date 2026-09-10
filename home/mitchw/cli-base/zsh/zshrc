@@ -24,8 +24,11 @@ PROMPT='%F{yellow}%n@%m%f %F{magenta}%1~%f %# '
 export TERM=xterm-256color
 
 # Configure defualt editor
-export EDITOR="vim" # Or "vim"
-export VISUAL="vim"
+export EDITOR="nvim" # Or "vim"
+export VISUAL="nvim"
+
+# Configure openning for nvim
+alias n='nvim .'
 
 # Configure openning for tmux
 alias t='tmux attach-session || tmux new-session'
@@ -54,8 +57,17 @@ vf() {
   fi
 }
 
+#add rebuild function for nh
+rebuild() {
+  if [[ -z "$1" ]]; then
+    nh os switch
+  else
+    nh os switch -H "$1" --target-host "$1"
+  fi
+}
+
 # Add Vim key bindings
-bindkey -v
+# bindkey -v
 
 # Welcome Message
 # Dynamic Device Info Welcome Message
