@@ -5,9 +5,10 @@
 
   imports =
     [ # Include the results of the hardware scan.
+      ../../modules/common
+      ../../modules/common/fonts
       ../../modules/darwin/users
-      # ../../modules/darwin/homebrew
-      ../../modules/fonts
+      ../../modules/darwin/homebrew
     ];
 
   networking.hostName = "mpswmacbook"; # Define your hostname.

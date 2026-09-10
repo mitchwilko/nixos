@@ -9,13 +9,14 @@
     [ # Include the results of the hardware scan.
       ./hardware.nix
       ../../modules/common
-      ../../modules/gui/xfce.nix
-      ../../modules/fonts
-      ../../modules/users
-      ../../modules/networking
-      ../../modules/remoteDesktop/xrdp.nix
-      ../../modules/virtualisation/docker.nix
-      ../../modules/virtualisation/qemu.nix
+      ../../modules/common/fonts
+      ../../modules/nixos
+      ../../modules/nixos/gui/xfce.nix
+      ../../modules/nixos/users
+      ../../modules/nixos/networking
+      ../../modules/nixos/remoteDesktop/xrdp.nix
+      ../../modules/nixos/virtualisation/docker.nix
+      ../../modules/nixos/virtualisation/qemu.nix
     ];
 
   # Bootloader.

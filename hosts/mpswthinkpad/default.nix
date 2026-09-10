@@ -9,15 +9,16 @@
     [ # Include the results of the hardware scan.
       ./hardware.nix
       ../../modules/common
-      ../../modules/gui/i3.nix
-      ../../modules/fonts
-      ../../modules/users
-      ../../modules/networking
-      ../../modules/audio
-      ../../modules/tlp
-      ../../modules/screenDisable
-      ../../modules/remoteDesktop/xrdp.nix
-      ../../modules/virtualisation/qemu.nix
+      ../../modules/common/fonts
+      ../../modules/nixos
+      ../../modules/nixos/gui/i3.nix
+      ../../modules/nixos/users
+      ../../modules/nixos/networking
+      ../../modules/nixos/audio
+      ../../modules/nixos/tlp
+      ../../modules/nixos/screenDisable
+      ../../modules/nixos/remoteDesktop/xrdp.nix
+      ../../modules/nixos/virtualisation/qemu.nix
     ];
 
   # Bootloader.

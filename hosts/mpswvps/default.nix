@@ -4,9 +4,10 @@
   imports =
     [ # Include the results of the hardware scan.
       # "${modulesPath}/virtualisation/digital-ocean-config.nix"
-      ../../modules/common
-      ../../modules/users
-      ../../modules/networking
+      ../../common
+      ../../modules/nixos
+      ../../modules/nixos/users
+      ../../modules/nixos/networking
     ];
 
   networking.hostName = "mpswvps"; # Define your hostname.

@@ -4,30 +4,8 @@
 
 {
   imports = [
-    ./utilities.nix
-    ./ssh.nix
-    ./nh.nix
+    ./nh
   ];
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Australia/Sydney";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_GB.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_AU.UTF-8";
-    LC_IDENTIFICATION = "en_AU.UTF-8";
-    LC_MEASUREMENT = "en_AU.UTF-8";
-    LC_MONETARY = "en_AU.UTF-8";
-    LC_NAME = "en_AU.UTF-8";
-    LC_NUMERIC = "en_AU.UTF-8";
-    LC_PAPER = "en_AU.UTF-8";
-    LC_TELEPHONE = "en_AU.UTF-8";
-    LC_TIME = "en_AU.UTF-8";
-  };
 
   # Allow for closed source Packages
   nixpkgs.config.allowUnfree = true;
@@ -43,7 +21,4 @@
     "mpswserver:teaiSVBljUDon8wwv4XE9ZNZiNMjuAzqHQL4CSTJraI="
     "mpswthinkpad:PIvTxwkPtlndAAZLiSllQO36MZ6YUk2/SfuIEPSRAIg="
   ];
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 }

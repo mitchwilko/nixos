@@ -1,11 +1,10 @@
 # modules/common/packages.nix
 
-{ pkgs, ... }:
+{ config, ... }:
 
 {
   programs.nh = {
     enable = true;
-    flake = "/home/mitchw/nixos";
+    flake = "${config.home.homeDirectory}/nixos";
   };
 }
-

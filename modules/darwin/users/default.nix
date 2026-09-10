@@ -8,4 +8,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   system.primaryUser = "mitchw";
+  users.users.mitchw = {
+    home = "/Users/mitchw";
+  };
 }
