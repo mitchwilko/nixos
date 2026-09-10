@@ -5,6 +5,6 @@
 {
   programs.nh = {
     enable = true;
-    flake = "~/nixos";
+    flake = "${config.home.homeDirectory}/nixos";
   };
 }

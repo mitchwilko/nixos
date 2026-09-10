@@ -1,6 +1,6 @@
 # hom/mitchw/common/default.nix
 
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -13,7 +13,7 @@
     ./nh
   ];
 
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     git
     wget
     curl
