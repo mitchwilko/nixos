@@ -9,13 +9,25 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-generators = {
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   }; 
 
-  outputs = { self, nixpkgs, home-manager, nixos-generators, ... }:
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    nix-darwin,
+    nixos-generators,
+    ...
+  }:
 
   {
     nixosConfigurations = {
@@ -105,25 +117,30 @@
           }
         ]; 
       };
+    };
 
-      # laptop = nixpkgs.lib.nixosSystem {
-      #   system = "x86_64-linux";
-
-      #   modules = [
-      #     ./hosts/laptop/default.nix
-
-      #     home-manager.nixosModules.home-manager
-
-      #     {
-      #       home-manager.useGlobalPkgs = true;
-      #       home-manager.useUserPackages = true;
-
-      #       home-manager.users.alice =
-      #         import ./home/alice.nix;
-      #     }
-      #   ];
-      # };
-
+    darwinConfigurations = {
+      mpswmacbook = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+    
+        modules = [
+          ./hosts/mpswmacbook/default.nix
+    
+          home-manager.darwinModules.home-manager
+    
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+    
+            home-manager.users.mitchw = {
+              imports = [
+                ./home/mitchw
+                ./home/mitchw/cli-extra
+              ];
+            };
+          }
+        ];
+      };
     };
     
     packages.x86_64-linux = {
