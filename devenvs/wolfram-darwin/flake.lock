@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1789114715,
+        "narHash": "sha256-ugpsyk3NM2s87vXfUiIIiibbJ4Pp0JPS5p/3mfs+q+c=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "21a67dc470149f337cecafbe965d8d252a390518",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs",
+        "wolfram-language-for-jupyter": "wolfram-language-for-jupyter"
+      }
+    },
+    "wolfram-language-for-jupyter": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1645264504,
+        "narHash": "sha256-aFj7FM8DuiOp47RUB3lzX26fsvy1HWlbcdAbvym10qs=",
+        "owner": "WolframResearch",
+        "repo": "WolframLanguageForJupyter",
+        "rev": "9a26ac78743cc47084c9c99ff75c5aee2657a409",
+        "type": "github"
+      },
+      "original": {
+        "owner": "WolframResearch",
+        "repo": "WolframLanguageForJupyter",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

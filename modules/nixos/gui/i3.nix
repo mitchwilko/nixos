@@ -23,6 +23,11 @@
     };
   };
 
+  # services.picom = {
+  #   enable = true;
+  #   backend = "xrender";
+  # };
+
   # services.greetd = {
   #   enable = true;
   #   settings = {
@@ -34,4 +39,9 @@
   # };
 
   services.displayManager.defaultSession = "none+i3";
+
+  # environment.etc."X11/xinit/xinitrc".text = ''
+  #   #!/bin/sh
+  #   exec i3
+  # '';
 }
