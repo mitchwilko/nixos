@@ -42,6 +42,7 @@
         "$mod+k" = "focus up";
         "$mod+l" = "focus right";
 
+        "$mod+0" = "workspace number 0";
         "$mod+1" = "workspace number 1";
         "$mod+2" = "workspace number 2";
         "$mod+3" = "workspace number 3";
@@ -57,6 +58,7 @@
 
       modes = {
         container = {
+          "0" = "workspace number 0";
           "1" = "workspace number 1";
           "2" = "workspace number 2";
           "3" = "workspace number 3";
@@ -68,6 +70,7 @@
           "9" = "workspace number 9";
 
            # Move container between workspaces
+          "Shift+0" = "move container to workspace number 0";
           "Shift+1" = "move container to workspace number 1";
           "Shift+2" = "move container to workspace number 2";
           "Shift+3" = "move container to workspace number 3";

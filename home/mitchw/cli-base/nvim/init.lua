@@ -34,6 +34,8 @@
 -- Set default visual basis
 -- =====================================================
 vim.cmd.colorscheme("mono")
+vim.cmd.colorscheme("ghdark")
+vim.cmd("syntax off")
 -- vim.g.molokai_original = 0
 
 vim.opt.number = true
@@ -41,6 +43,7 @@ vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.laststatus = 2
 vim.opt.mouse = ""
+vim.opt.scrolloff = 8
 
 -- vim.opt.colorcolumn = "81"
 -- vim.cmd("highlight ColorColumn ctermbg=DarkBlue")
@@ -100,7 +103,7 @@ vim.opt.autowrite = true
 -- Lightline Config
 -- =====================================================
 vim.g.lightline = {
-  colorscheme = "mono",
+  colorscheme = "ghdark",
 }
 
 -- =====================================================
@@ -157,24 +160,24 @@ vim.keymap.set('n', '<C-w>\"', '<CMD>split | Oil<CR>', { desc = 'Open Oil in hor
 -- (e.g. an "atlas" colorscheme) with 'muted' and 'amber' keys, each
 -- a {guicolor, ctermcolor} pair.
 -- =====================================================
-vim.g.comment_highlight_toggled = 0
-
-local function toggle_comment_color()
-  local fg
-
-  if vim.g.comment_highlight_toggled == 1 then
-    -- revert to atlas's own comment color
-    fg = vim.g.atlas_colors["muted"]
-    vim.g.comment_highlight_toggled = 0
-    print("Comment color: muted")
-  else
-    -- use atlas's amber entry if it has one, else hardcode
-    fg = vim.g.atlas_colors["amber"]
-    vim.g.comment_highlight_toggled = 1
-    print("Comment color: amber")
-  end
-
-  vim.cmd(string.format("hi Comment guifg=%s ctermfg=%s", fg[1], fg[2]))
-end
-
-vim.keymap.set("n", "<C-s>", toggle_comment_color, { noremap = true, silent = true })
+-- vim.g.comment_highlight_toggled = 0
+-- 
+-- local function toggle_comment_color()
+--   local fg
+-- 
+--   if vim.g.comment_highlight_toggled == 1 then
+--     -- revert to atlas's own comment color
+--     fg = vim.g.atlas_colors["muted"]
+--     vim.g.comment_highlight_toggled = 0
+--     print("Comment color: muted")
+--   else
+--     -- use atlas's amber entry if it has one, else hardcode
+--     fg = vim.g.atlas_colors["amber"]
+--     vim.g.comment_highlight_toggled = 1
+--     print("Comment color: amber")
+--   end
+-- 
+--   vim.cmd(string.format("hi Comment guifg=%s ctermfg=%s", fg[1], fg[2]))
+-- end
+-- 
+-- vim.keymap.set("n", "<C-s>", toggle_comment_color, { noremap = true, silent = true })
