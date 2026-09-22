@@ -15,6 +15,8 @@
 
   home.packages = with pkgs; [
     git
+    git-lfs
+    git-xet
     wget
     curl
     htop
