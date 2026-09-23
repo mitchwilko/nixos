@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./lamco
+    ./lamco.nix
   ];
 
   home.packages = with pkgs; [
@@ -18,7 +18,7 @@
   ];
 
   wayland.windowManager.sway = {
-    enable = true
+    enable = true;
 
     wrapperFeatures.gtk = true;
 

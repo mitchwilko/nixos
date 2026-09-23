@@ -8,7 +8,7 @@
       lightdm.enable = true;
       # startx.enable = true;
     };
-  }
+  };
 
   services.displayManager.defaultSession = "none+i3";
   # services.displayManager.defaultSession = "sway";

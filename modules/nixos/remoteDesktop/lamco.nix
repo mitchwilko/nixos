@@ -3,7 +3,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  lamco-rdp-server = pkgs.callPackage ../../.././pkgs/lamco-rdp/package.nix {};
+  lamco-rdp-server = pkgs.callPackage ../../.././pkgs/lamco-rdp-server/package.nix {};
 in
 {
   environment.systemPackages = [
