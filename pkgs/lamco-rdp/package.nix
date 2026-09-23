@@ -50,9 +50,16 @@ rustPlatform.buildRustPackage rec {
     "gui,wayland,wl-clipboard,vaapi,pam-auth"
   ];
 
-  # Patches required for building with new libva 
   postPatch = ''
-    patch -d "$cargoDepsCopy" -p1 < ${./patches/cros-libva-vp9-nix.patch}
+    substituteInPlace "$cargoDepsCopy/source-registry-0/cros-libva-0.0.13/src/buffer/vp9.rs" \
+      --replace-fail \
+        'va_reserved: Default::default(),' \
+        'va_reserved: Default::default(),
+              ..Default::default()'
+
+    mkdir -p licenses
+    cp ${./licenses/OpenH264-BINARY_LICENSE.txt} \
+       licenses/OpenH264-BINARY_LICENSE.txt
   '';
 
   meta = {
