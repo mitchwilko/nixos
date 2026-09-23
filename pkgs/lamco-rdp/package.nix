@@ -40,7 +40,7 @@ rustPlatform.buildRustPackage rec {
   cargoBuildFlags = [
     "--release"
     "--features"
-    "gui,wayland,libei"
+    "gui,wayland,wl-clipboard,vaapi,pam-auth"
   ];
 
   meta = {

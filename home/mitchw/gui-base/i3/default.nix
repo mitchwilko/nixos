@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     dmenu
     i3status
-    i3lock
     thunar
     xclip
   ];
@@ -27,7 +26,7 @@
         "$mod+Return" = "exec alacritty";
         "$mod+d" = "exec dmenu_run";
         "$mod+x" = "mode system";
-        "$mod+r" = "mode resize";
+        "$mod+Tab" = "mode resize";
         "$mod+space" = "mode container";
 
         "$mod+q" = "kill";
@@ -107,7 +106,6 @@
         };
 
         system = {
-          "l" = "exec i3lock, mode default";
           "r" = "restart";
           "s" = "exec systemctl poweroff";
           "e" = "exit";

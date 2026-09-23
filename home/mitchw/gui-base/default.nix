@@ -6,6 +6,7 @@
   imports = [
     ./alacritty
     ./i3
+    ./sway
   ];
 
   home.packages = with pkgs; [

@@ -163,6 +163,9 @@
             }
           ];
         };
+
+    lamco-rdp-server =
+      pkgs.callPackage ./pkgs/lamco-rdp/package.nix {};
     };
   };
 }

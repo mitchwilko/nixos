@@ -18,7 +18,7 @@
   ];
 
   wayland.windowManager.sway = {
-    enable = true;
+    enable = true
 
     wrapperFeatures.gtk = true;
 
@@ -33,7 +33,7 @@
         "$mod+Return" = "exec alacritty";
         "$mod+d" = "exec wmenu-run";
         "$mod+x" = "mode system";
-        "$mod+r" = "mode resize";
+        "$mod+Tab" = "mode resize";
         "$mod+space" = "mode container";
 
         "$mod+q" = "kill";
@@ -133,6 +133,7 @@
       input = {
         "*" = {
           xkb_layout = "us";
+          xkb_variant = "";
         };
       };
 

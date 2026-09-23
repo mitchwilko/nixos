@@ -8,12 +8,6 @@
 
     # Allow GTK applications to behave correctly under Sway.
     wrapperFeatures.gtk = true;
-
-    extraPackages = with pkgs; [
-      mako
-      grim
-      slurp
-    ];
   };
 
   # Required by a number of Wayland desktop applications.
@@ -24,13 +18,4 @@
 
   # Hardware acceleration.
   hardware.graphics.enable = true;
-
-  # Wayland keyboard layout.
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  # Make Sway available as a display-manager session.
-  services.displayManager.defaultSession = "sway";
 }
