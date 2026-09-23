@@ -23,11 +23,6 @@
     };
   };
 
-  # services.picom = {
-  #   enable = true;
-  #   backend = "xrender";
-  # };
-
   # services.greetd = {
   #   enable = true;
   #   settings = {
