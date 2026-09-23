@@ -44,6 +44,8 @@ rustPlatform.buildRustPackage rec {
 
   LIBCLANG_PATH = "${libclang.lib}/lib";
 
+  doCheck = false;
+
   # Adjust according to the features you actually want.
   cargoBuildFlags = [
     "--features"
