@@ -246,7 +246,13 @@ command! reload :write | restart full
 " program.  There is also %FOREGROUND, which is useful for entering passwords.
 
 " Pdf
-filextype {*.pdf},<application/pdf> zathura %c %i, apvlv %c, xpdf %c
+" filextype {*.pdf},<application/pdf> zathura %c %i, apvlv %c, xpdf %c
+" fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
+filextype {*.pdf},<application/pdf> \
+    \{\$TERMUX_VERSION zathura %c \} \
+    \{\$OSTYPE == darwin Skim %c \} \
+    \{\$OSTYPE == linux zathura %c \}
+
 fileviewer {*.pdf},<application/pdf> pdftotext -nopgbrk %c -
 
 " PostScript
