@@ -11,6 +11,7 @@
       ../../modules/common
       ../../modules/common/fonts
       ../../modules/nixos
+      ../../modules/nixos/gui/display_manager.nix
       ../../modules/nixos/gui/i3.nix
       ../../modules/nixos/audio
       ../../modules/nixos/tlp

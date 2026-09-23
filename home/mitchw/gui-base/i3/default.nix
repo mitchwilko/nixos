@@ -6,7 +6,11 @@
     i3status
     thunar
     xclip
+    feh
   ];
+
+  home.file.".config/wallpaper.jpg".source =
+    ./wallpaper.jpg;
 
   xsession.windowManager.i3 = {
     enable = true;
@@ -130,6 +134,15 @@
       bars = [
         {
           statusCommand = "${pkgs.i3status}/bin/i3status";
+        }
+      ];
+
+      startup = [
+        {
+          command =
+            "${pkgs.feh}/bin/feh --bg-fill ${config.home.homeDirectory}/.config/wallpaper.jpg";
+          always = true;
+          notification = false;
         }
       ];
     };

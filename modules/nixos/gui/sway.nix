@@ -1,6 +1,6 @@
 # modules/gui/sway.nix
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   programs.sway = {
@@ -18,4 +18,19 @@
 
   # Hardware acceleration.
   hardware.graphics.enable = true;
+
+  xdg.portal = {
+    enable = true;
+  
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-wlr
+    ];
+  
+    config.sway = {
+      default = "gtk";
+      "org.freedesktop.impl.portal.ScreenCast" = "wlr";
+      "org.freedesktop.impl.portal.Screenshot" = "wlr";
+    };
+  };
 }

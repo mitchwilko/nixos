@@ -10,17 +10,24 @@
 
     wl-clipboard
     swayidle
-    waybar
+    i3status
     wmenu
 
     grim
     slurp
   ];
 
+
   wayland.windowManager.sway = {
     enable = true;
 
     wrapperFeatures.gtk = true;
+    
+    # checkConfig = false;
+
+    # extraConfig = ''
+    #   set Control Control
+    # '';
 
     config = {
       modifier = "Control";
@@ -30,36 +37,36 @@
       menu = "wmenu-run";
 
       keybindings = {
-        "$mod+Return" = "exec alacritty";
-        "$mod+d" = "exec wmenu-run";
-        "$mod+x" = "mode system";
-        "$mod+Tab" = "mode resize";
-        "$mod+space" = "mode container";
+        "Control+Return" = "exec alacritty";
+        "Control+d" = "exec wmenu-run";
+        "Control+x" = "mode system";
+        "Control+Tab" = "mode resize";
+        "Control+space" = "mode container";
 
-        "$mod+q" = "kill";
+        "Control+q" = "kill";
 
-        "$mod+Shift+c" = "reload";
-        "$mod+Shift+r" = "restart";
+        "Control+Shift+c" = "reload";
+        "Control+Shift+r" = "restart";
 
-        "$mod+f" = "fullscreen toggle";
+        "Control+f" = "fullscreen toggle";
 
-        "$mod+h" = "focus left";
-        "$mod+j" = "focus down";
-        "$mod+k" = "focus up";
-        "$mod+l" = "focus right";
+        "Control+h" = "focus left";
+        "Control+j" = "focus down";
+        "Control+k" = "focus up";
+        "Control+l" = "focus right";
 
-        "$mod+0" = "workspace number 0";
-        "$mod+1" = "workspace number 1";
-        "$mod+2" = "workspace number 2";
-        "$mod+3" = "workspace number 3";
-        "$mod+4" = "workspace number 4";
-        "$mod+5" = "workspace number 5";
-        "$mod+6" = "workspace number 6";
-        "$mod+7" = "workspace number 7";
-        "$mod+8" = "workspace number 8";
-        "$mod+9" = "workspace number 9";
+        "Control+0" = "workspace number 0";
+        "Control+1" = "workspace number 1";
+        "Control+2" = "workspace number 2";
+        "Control+3" = "workspace number 3";
+        "Control+4" = "workspace number 4";
+        "Control+5" = "workspace number 5";
+        "Control+6" = "workspace number 6";
+        "Control+7" = "workspace number 7";
+        "Control+8" = "workspace number 8";
+        "Control+9" = "workspace number 9";
 
-        "$mod+Shift+space" = "focus mode_toggle";
+        "Control+Shift+space" = "focus mode_toggle";
       };
 
       modes = {
@@ -128,19 +135,22 @@
         };
       };
 
-      bars = [];
+      bars = [
+        {
+          statusCommand = "${pkgs.i3status}/bin/i3status";
+        }
+      ];
 
       input = {
         "*" = {
           xkb_layout = "us";
-          xkb_variant = "";
         };
       };
 
       startup = [
-        {
-          command = "${pkgs.waybar}/bin/waybar";
-        }
+        # {
+        #   command = "${pkgs.waybar}/bin/waybar";
+        # }
         {
           command =
             "${pkgs.systemd}/bin/systemctl --user import-environment " +

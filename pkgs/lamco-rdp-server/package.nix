@@ -5,6 +5,7 @@
   clang,
   libclang,
   cmake,
+  makeWrapper,
   openssl, 
   pipewire, 
   wayland, 
@@ -30,6 +31,7 @@ rustPlatform.buildRustPackage rec {
     pkg-config
     clang
     libclang
+    makeWrapper
     cmake
   ];
 
@@ -62,6 +64,11 @@ rustPlatform.buildRustPackage rec {
     mkdir -p licenses
     cp ${./licenses/OpenH264-BINARY_LICENSE.txt} \
        licenses/OpenH264-BINARY_LICENSE.txt
+  '';
+
+  postInstall = ''
+    wrapProgram $out/bin/lamco-rdp-server \
+      --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath [ wayland ]}"
   '';
 
   meta = {

@@ -13,9 +13,8 @@
       ../../modules/nixos
       ../../modules/nixos/gui/display_manager.nix
       ../../modules/nixos/gui/i3.nix
-      ../../modules/nixos/gui/sway.nix
       ../../modules/nixos/audio
-      ../../modules/nixos/remoteDesktop/lamco.nix
+      ../../modules/nixos/remoteDesktop/xrdp.nix
       ../../modules/nixos/virtualisation/docker.nix
       ../../modules/nixos/virtualisation/qemu.nix
     ];
