@@ -51,9 +51,9 @@ rustPlatform.buildRustPackage rec {
   ];
 
   # Patches required for building with new libva 
-  patches = [
-    ./patches/cros-libva-vp9-default.patch
-  ];
+  postPatch = ''
+    patch -d "$cargoDepsCopy" -p1 < ${./patches/cros-libva-vp9-nix.patch}
+  '';
 
   meta = {
     description = "Wayland-native RDP server for Linux";
