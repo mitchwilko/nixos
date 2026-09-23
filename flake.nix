@@ -164,8 +164,9 @@
           ];
         };
 
-    lamco-rdp-server =
-      pkgs.callPackage ./pkgs/lamco-rdp/package.nix {};
+    lamco-rdp =
+     nixpkgs.legacyPackages.x86_64-linux.callPackage
+      ./pkgs/lamco-rdp/package.nix {};
     };
   };
 }

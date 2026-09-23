@@ -2,11 +2,14 @@
   rustPlatform, 
   fetchFromGitHub, 
   pkg-config, 
+  clang,
+  libclang,
+  cmake,
   openssl, 
   pipewire, 
   wayland, 
   libxkbcommon, 
-  libei, 
+  libva,
   pam
 }:
 
@@ -18,13 +21,16 @@ rustPlatform.buildRustPackage rec {
     owner = "lamco-admin";
     repo = "lamco-rdp-server";
     rev = "v${version}";
-    hash = lib.fakeHash;
+    hash = "sha256-GUhfn595Wo8D5NqyVzrlE1Y5X4k6NpCplAYMqmf45Xw=";
   };
 
-  cargoHash = lib.fakeHash;
+  cargoHash = "sha256-6R3WboCVdEralf9gw1mmOl80HCMafa0l8dzu/3kNfJw=";
 
   nativeBuildInputs = [
     pkg-config
+    clang
+    libclang
+    cmake
   ];
 
   buildInputs = [
@@ -32,15 +38,21 @@ rustPlatform.buildRustPackage rec {
     pipewire
     wayland
     libxkbcommon
-    libei
+    libva
     pam
   ];
 
+  LIBCLANG_PATH = "${libclang.lib}/lib";
+
   # Adjust according to the features you actually want.
   cargoBuildFlags = [
-    "--release"
     "--features"
     "gui,wayland,wl-clipboard,vaapi,pam-auth"
+  ];
+
+  # Patches required for building with new libva 
+  patches = [
+    ./patches/cros-libva-vp9-default.patch
   ];
 
   meta = {
