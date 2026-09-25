@@ -1,6 +1,5 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# Config file for Roland (Rasp Pi)
+# Currently set up for temp virtualisation
 
 { config, pkgs, ... }:
 
@@ -9,12 +8,9 @@
     [ # Include the results of the hardware scan.
       ./hardware.nix
       ../../modules/common
-      ../../modules/common/fonts
       ../../modules/nixos
-      ../../modules/nixos/gui/xfce.nix
-      ../../modules/nixos/remoteDesktop/xrdp.nix
-      ../../modules/nixos/virtualisation/docker.nix
-      ../../modules/nixos/virtualisation/qemu.nix
+      ../../modules/nixos/containers/technitium.nix
+      ../../modules/nixos/containers/caddy.nix
     ];
 
   # Bootloader.
