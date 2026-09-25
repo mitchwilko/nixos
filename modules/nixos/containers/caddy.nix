@@ -8,6 +8,13 @@
 
     hostAddress = "192.168.100.1";
     localAddress = "192.168.100.3";
+    
+    allowedDevices = [
+      {
+        node = "/dev/net/tun";
+        modifier = "rw";
+      }
+    ];
 
     config = { config, pkgs, ... }: {
       services.caddy = {

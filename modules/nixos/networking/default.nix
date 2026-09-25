@@ -16,6 +16,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   # 1. Enable the service and the firewall
+
   services.tailscale.enable = true;
   networking.nftables.enable = true;
   networking.firewall = {
