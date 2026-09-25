@@ -36,6 +36,14 @@
         AddKeysToAgent = "yes";
       };
 
+      "roland" = {
+        HostName = "roland.bream-betta.ts.net";
+        User = "mitchw";
+        IdentityFile = "~/.ssh/id_ed25519";
+        Port = 20273;
+        AddKeysToAgent = "yes";
+      };
+
       "github.com" = {
         Hostname = "ssh.github.com";
         # user = "git";
