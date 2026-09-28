@@ -12,7 +12,7 @@
     enableDefaultConfig = false; # Manages ~/.ssh/config defaults
     
     settings = {
-      "mpswserver" = {
+      "forge" = {
         HostName = "forge.bream-betta.ts.net";
         User = "mitchw";
         IdentityFile = "~/.ssh/id_ed25519";
@@ -20,8 +20,8 @@
         AddKeysToAgent = "yes";
       };
 
-      "mpswthinkpad" = {
-        HostName = "thinkpad.bream-betta.ts.net";
+      "thedawn" = {
+        HostName = "thedawn.bream-betta.ts.net";
         User = "mitchw";
         IdentityFile = "~/.ssh/id_ed25519";
         Port = 20273;

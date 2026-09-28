@@ -55,11 +55,11 @@
         ]; 
       };
 
-      mpswthinkpad = nixpkgs.lib.nixosSystem {
+      thedawn = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         modules = [
-          ./hosts/mpswthinkpad/default.nix
+          ./hosts/thedawn/default.nix
 
           home-manager.nixosModules.home-manager
 

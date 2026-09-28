@@ -82,11 +82,11 @@
           }
 
           pyhttp.samwilko.com {
-            reverse_proxy thinkpad.bream-betta.ts.net:8082
+            reverse_proxy thedawn.bream-betta.ts.net:8082
           }
 
           jupyter.samwilko.com {
-            reverse_proxy thinkpad.bream-betta.ts.net:8084
+            reverse_proxy thedawn.bream-betta.ts.net:8084
           }
         '';
       };
