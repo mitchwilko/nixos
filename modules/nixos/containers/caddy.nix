@@ -54,19 +54,19 @@
           }
 
           mpswiki.samwilko.com {
-            reverse_proxy server.bream-betta.ts.net:8888
+            reverse_proxy forge.bream-betta.ts.net:8888
           }
 
           mpswgit.samwilko.com {
-            reverse_proxy server.bream-betta.ts.net:3000
+            reverse_proxy forge.bream-betta.ts.net:3000
           }
 
           stirlingpdf.samwilko.com {
-            reverse_proxy server.bream-betta.ts.net:8083
+            reverse_proxy forge.bream-betta.ts.net:8083
           }
 
           zftpgo.samwilko.com {
-            reverse_proxy server.bream-betta.ts.net:8080 {
+            reverse_proxy forge.bream-betta.ts.net:8080 {
               transport http {
                 tls_insecure_skip_verify
               }
@@ -74,7 +74,7 @@
           }
 
           zftpgowd.samwilko.com {
-            reverse_proxy server.bream-betta.ts.net:5006 {
+            reverse_proxy forge.bream-betta.ts.net:5006 {
               transport http {
                 tls_insecure_skip_verify
               }

@@ -13,7 +13,7 @@
     
     settings = {
       "mpswserver" = {
-        HostName = "server.bream-betta.ts.net";
+        HostName = "forge.bream-betta.ts.net";
         User = "mitchw";
         IdentityFile = "~/.ssh/id_ed25519";
         Port = 20273;
@@ -52,8 +52,8 @@
         IdentityFile = "~/.ssh/id_GITHUB";
       };
 
-      "server.bream-betta.ts.net" = {
-        Hostname = "server.bream-betta.ts.net";
+      "forge.bream-betta.ts.net" = {
+        Hostname = "forge.bream-betta.ts.net";
         # user = "deploy";
         Port = 222;
         AddKeysToAgent = "yes";
