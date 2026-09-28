@@ -32,11 +32,11 @@
   {
     nixosConfigurations = {
 
-      mpswserver = nixpkgs.lib.nixosSystem {
+      forge = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         modules = [
-          ./hosts/mpswserver/default.nix
+          ./hosts/forge
 
           home-manager.nixosModules.home-manager
 

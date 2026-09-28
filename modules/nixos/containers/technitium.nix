@@ -17,11 +17,16 @@
     ];
   
     config = { config, pkgs, ... }: {
-      services.tailscale.enable = true;
-  
       services.technitium-dns-server = {
         enable = true;
         openFirewall = true;
+      };
+
+      services.tailscale.enable = true;
+      networking.nftables.enable = true;
+      networking.firewall = {
+        enable = true;
+        trustedInterfaces = [ config.services.tailscale.interfaceName ];
       };
   
       system.stateVersion = "26.05";

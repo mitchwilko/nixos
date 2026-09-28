@@ -1,5 +1,6 @@
-# Config file for Roland (Rasp Pi)
-# Currently set up for temp virtualisation
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
 
@@ -8,24 +9,21 @@
     [ # Include the results of the hardware scan.
       ./hardware.nix
       ../../modules/common
+      ../../modules/common/fonts
       ../../modules/nixos
-      ../../modules/nixos/networking/nat.nix
-      ../../modules/nixos/containers/technitium.nix
-      ../../modules/nixos/containers/caddy.nix
+      ../../modules/nixos/gui/display_manager.nix
+      ../../modules/nixos/gui/i3.nix
+      ../../modules/nixos/audio
+      ../../modules/nixos/remoteDesktop/xrdp.nix
+      ../../modules/nixos/virtualisation/docker.nix
+      ../../modules/nixos/virtualisation/qemu.nix
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  # Virtualisation Settings
-  services.qemuGuest.enable = true;
-  services.spice-vdagentd.enable = true;
-  hardware.graphics.enable = true;
-
-  networking.hostName = "roland"; # Define your hostname.
-  myNetwork.externalInterface = "enp1s0"; # Required for containers
+  networking.hostName = "forge"; # Define your hostname.
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

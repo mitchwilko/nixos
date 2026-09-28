@@ -1,0 +1,67 @@
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, pkgs, ... }:
+
+{
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware.nix
+      ../../modules/common
+      ../../modules/common/fonts
+      ../../modules/nixos
+      ../../modules/nixos/gui/display_manager.nix
+      ../../modules/nixos/gui/i3.nix
+      ../../modules/nixos/audio
+      ../../modules/nixos/tlp
+      ../../modules/nixos/screenDisable
+      ../../modules/nixos/remoteDesktop/xrdp.nix
+      ../../modules/nixos/virtualisation/qemu.nix
+    ];
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  # boot.kernelParams = [
+  #   "video=eDP-1:d"
+  # ];
+
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
+  };
+
+  networking.hostName = "thedawn"; # Define your hostname.
+
+  # networking = {
+  #   interfaces.enp5s0 = {
+  #     wakeOnLan = {
+  #       enable = true;
+  #     };
+  #   };
+  #   firewall = {
+  #     allowedUDPPorts = [ 9 ];
+  #   };
+  # };
+
+  # systemd.services.enable-wol = {
+  #   description = "Enable Wake-on-LAN";
+  #   wantedBy = [ "multi-user.target" ];
+  # 
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #     ExecStart = "${pkgs.ethtool}/bin/ethtool -s enp5s0 wol g";
+  #   };
+  # };
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "26.05"; # Did you read the comment?
+}
