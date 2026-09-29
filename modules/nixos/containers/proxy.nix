@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  containers.caddy = {
+  containers.proxy = {
     autoStart = true;
 
     privateNetwork = true;
@@ -48,9 +48,9 @@
 
           technitium.samwilko.com {
             @dns path /dns-query*
-            reverse_proxy @dns technitium.bream-betta.ts.net:5380
+            reverse_proxy @dns dns.bream-betta.ts.net:5380
 
-            reverse_proxy technitium.bream-betta.ts.net:5380
+            reverse_proxy dns.bream-betta.ts.net:5380
           }
 
           mpswiki.samwilko.com {

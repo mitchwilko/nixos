@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  containers.technitium = {
+  containers.dns = {
     autoStart = true;
   
     privateNetwork = true;

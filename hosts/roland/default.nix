@@ -10,8 +10,8 @@
       ../../modules/common
       ../../modules/nixos
       ../../modules/nixos/networking/nat.nix
-      ../../modules/nixos/containers/technitium.nix
-      ../../modules/nixos/containers/caddy.nix
+      ../../modules/nixos/containers/dns.nix
+      ../../modules/nixos/containers/proxy.nix
     ];
 
   # Bootloader.
