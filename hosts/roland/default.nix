@@ -14,10 +14,12 @@
       ../../modules/nixos/containers/proxy.nix
     ];
 
-  boot.zfs.forceImportRoot = false;
-
-  networking.hostName = "roland"; # Define your hostname.
+  networking.hostName = "roland";
   myNetwork.externalInterface = "enp1s0"; # Required for containers
+
+  nixpkgs.buildPlatform = "x86_64-linux";
+
+  boot.zfs.forceImportRoot = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
