@@ -9,6 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +29,7 @@
     self,
     nixpkgs,
     home-manager,
+    nixos-hardware,
     nix-darwin,
     nixos-generators,
     ...
@@ -39,7 +45,6 @@
           ./hosts/forge
 
           home-manager.nixosModules.home-manager
-
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -59,10 +64,11 @@
         system = "x86_64-linux";
 
         modules = [
-          ./hosts/thedawn/default.nix
+          nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen2
+
+          ./hosts/thedawn
 
           home-manager.nixosModules.home-manager
-
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -79,14 +85,15 @@
         ]; 
       };
 
-      nixvm = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-
+      roland = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+      
         modules = [
-          ./hosts/nixvm/default.nix
+          nixos-hardware.nixosModules.raspberry-pi-3
+
+          ./hosts/roland/default.nix
 
           home-manager.nixosModules.home-manager
-
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -97,14 +104,13 @@
         ]; 
       };
 
-      roland = nixpkgs.lib.nixosSystem {
+      nixvm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         modules = [
-          ./hosts/roland/default.nix
+          ./hosts/nixvm/default.nix
 
           home-manager.nixosModules.home-manager
-
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -122,7 +128,6 @@
           ./hosts/mpswvps/default.nix
 
           home-manager.nixosModules.home-manager
-
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -145,7 +150,6 @@
           ./hosts/mpswmacbook/default.nix
     
           home-manager.darwinModules.home-manager
-    
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -171,7 +175,6 @@
             ./hosts/mpswvps/default.nix
   
             home-manager.nixosModules.home-manager
-  
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -182,9 +185,9 @@
           ];
         };
 
-    lamco-rdp-server =
-     nixpkgs.legacyPackages.x86_64-linux.callPackage
-      ./pkgs/lamco-rdp-server/package.nix {};
+      lamco-rdp-server =
+       nixpkgs.legacyPackages.x86_64-linux.callPackage
+        ./pkgs/lamco-rdp-server/package.nix {};
     };
   };
 }
