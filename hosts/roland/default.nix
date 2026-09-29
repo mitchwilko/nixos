@@ -6,23 +6,13 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware.nix
+      # ./hardware.nix
       ../../modules/common
       ../../modules/nixos
       ../../modules/nixos/networking/nat.nix
       ../../modules/nixos/containers/dns.nix
       ../../modules/nixos/containers/proxy.nix
     ];
-
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/vda";
-  boot.loader.grub.useOSProber = true;
-
-  # Virtualisation Settings
-  services.qemuGuest.enable = true;
-  services.spice-vdagentd.enable = true;
-  hardware.graphics.enable = true;
 
   networking.hostName = "roland"; # Define your hostname.
   myNetwork.externalInterface = "enp1s0"; # Required for containers
