@@ -14,6 +14,8 @@
       ../../modules/nixos/containers/proxy.nix
     ];
 
+  boot.zfs.forceImportRoot = false;
+
   networking.hostName = "roland"; # Define your hostname.
   myNetwork.externalInterface = "enp1s0"; # Required for containers
 
