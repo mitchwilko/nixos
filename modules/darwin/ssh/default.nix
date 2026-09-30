@@ -8,7 +8,7 @@
 
     extraConfig = ''
       Port 20273
-      PasswordAuthentication no
+      PasswordAuthentication yes
       KbdInteractiveAuthentication no
       PermitRootLogin no
       MaxAuthTries 3
