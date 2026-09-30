@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 
 {
   nix.linux-builder = {
@@ -9,7 +9,7 @@
     config = {
       virtualisation = {
         cores = 8;
-        memorySize = 8192;
+        memorySize = lib.mkForce 8192;
       };
     };
   };
