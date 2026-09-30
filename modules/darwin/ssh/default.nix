@@ -6,7 +6,7 @@
   # Enable the ssh server
   services.openssh = {
     enable = true;
-    openFirewall = true;
+    # openFirewall = true;
     ports = [ 20273 ];
     settings = {
       PasswordAuthentication = false;
