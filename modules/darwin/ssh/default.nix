@@ -7,8 +7,7 @@
     enable = true;
 
     extraConfig = ''
-      Port 20273
-      PasswordAuthentication yes
+      PasswordAuthentication no
       KbdInteractiveAuthentication no
       PermitRootLogin no
       MaxAuthTries 3

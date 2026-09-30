@@ -42,7 +42,7 @@
 
       Host mpswmacbook
         HostName mpswmacbook.bream-betta.ts.net
-        Port 20273
+        Port 22
         User mitchw
         IdentityFile /root/.ssh/id_ed25519
         IdentitiesOnly yes
