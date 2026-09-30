@@ -5,7 +5,6 @@
 {
   services.openssh = {
     enable = true;
-    openFirewall = true;
 
     extraConfig = ''
       Port 20273
