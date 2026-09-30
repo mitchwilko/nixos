@@ -13,12 +13,27 @@
 
     buildMachines = [
       {
+        hostName = "mpswmacbook";
+
+        system = "aarch64-linux";
+        systems = [
+          "aarch64-linux"
+        ];
+
+        maxJobs = 8;
+        speedFactor = 3;
+
+        protocol = "ssh-ng";
+
+        supportedFeatures = [ "big-parallel" ];
+        mandatoryFeatures = [ ];
+      }
+      {
         hostName = "thedawn";
 
         system = "x86_64-linux";
         systems = [
           "x86_64-linux"
-          "aarch64-linux"
         ];
 
         maxJobs = 8;

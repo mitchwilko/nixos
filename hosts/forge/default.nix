@@ -26,7 +26,7 @@
   boot.binfmt = {
    emulatedSystems = [ "aarch64-linux" ];
    preferStaticEmulators = true;
- };
+  };
 
   networking.hostName = "forge"; # Define your hostname.
 
