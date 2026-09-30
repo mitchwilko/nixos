@@ -28,22 +28,22 @@
         supportedFeatures = [ "big-parallel" ];
         mandatoryFeatures = [ ];
       }
-      {
-        hostName = "thedawn";
+      # {
+      #   hostName = "thedawn";
 
-        system = "x86_64-linux";
-        systems = [
-          "x86_64-linux"
-        ];
+      #   system = "x86_64-linux";
+      #   systems = [
+      #     "x86_64-linux"
+      #   ];
 
-        maxJobs = 8;
-        speedFactor = 2;
+      #   maxJobs = 8;
+      #   speedFactor = 2;
 
-        protocol = "ssh-ng";
+      #   protocol = "ssh-ng";
 
-        supportedFeatures = [ "big-parallel" ];
-        mandatoryFeatures = [ ];
-      }
+      #   supportedFeatures = [ "big-parallel" ];
+      #   mandatoryFeatures = [ ];
+      # }
     ];
   };
 }

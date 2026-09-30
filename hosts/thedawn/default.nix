@@ -24,10 +24,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.binfmt = {
-    emulatedSystems = [ "aarch64-linux" ];
-    preferStaticEmulators = true;
-  };
+  # boot.binfmt = {
+  #   emulatedSystems = [ "aarch64-linux" ];
+  #   preferStaticEmulators = true;
+  # };
 
   # boot.kernelParams = [
   #   "video=eDP-1:d"

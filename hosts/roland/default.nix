@@ -17,7 +17,7 @@
   networking.hostName = "roland";
   myNetwork.externalInterface = "enp1s0"; # Required for containers
 
-  nixpkgs.buildPlatform = "x86_64-linux";
+  # nixpkgs.buildPlatform = "x86_64-linux";
 
   boot.zfs.forceImportRoot = false;
 
