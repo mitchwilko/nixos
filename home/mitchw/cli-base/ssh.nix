@@ -44,11 +44,10 @@
         AddKeysToAgent = "yes";
       };
 
-     "thedawn-builder" = {
-        HostName = "10.0.0.14";
+      "installation01" = {
+        HostName = "installation01.bream-betta.ts.net";
         User = "mitchw";
         IdentityFile = "~/.ssh/id_ed25519";
-        IdentitiesOnly = "yes";
         Port = 20273;
         AddKeysToAgent = "yes";
       };
