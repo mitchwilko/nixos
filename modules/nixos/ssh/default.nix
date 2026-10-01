@@ -39,10 +39,10 @@
         User mitchw
         IdentityFile /root/.ssh/id_ed25519
         IdentitiesOnly yes
-
-      Host mpswmacbook
-        HostName mpswmacbook.bream-betta.ts.net
-        Port 22
+      
+      Host installation01
+        HostName installation01.bream-betta.ts.net
+        Port 20273
         User mitchw
         IdentityFile /root/.ssh/id_ed25519
         IdentitiesOnly yes

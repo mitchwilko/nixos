@@ -13,7 +13,7 @@
 
     buildMachines = [
       {
-        hostName = "mpswmacbook";
+        hostName = "installation01";
 
         system = "aarch64-linux";
         systems = [
@@ -21,7 +21,7 @@
         ];
 
         maxJobs = 8;
-        speedFactor = 3;
+        speedFactor = 2;
 
         protocol = "ssh-ng";
 

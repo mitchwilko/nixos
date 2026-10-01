@@ -11,7 +11,7 @@
       ../../modules/common
       ../../modules/common/fonts
       ../../modules/nixos
-      # ../../modules/nixos/distributedBuilder
+      ../../modules/nixos/distributedBuilder
       ../../modules/nixos/gui/display_manager.nix
       ../../modules/nixos/gui/i3.nix
       ../../modules/nixos/audio

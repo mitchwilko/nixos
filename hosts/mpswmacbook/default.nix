@@ -9,8 +9,6 @@
       ../../modules/common/fonts
       ../../modules/darwin
       ../../modules/darwin/homebrew
-      ../../modules/darwin/ssh
-      ../../modules/darwin/linuxBuilder
     ];
 
   networking.hostName = "mpswmacbook"; # Define your hostname.
