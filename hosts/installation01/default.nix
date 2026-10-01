@@ -10,6 +10,10 @@
       ../../modules/nixos
     ];
 
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   networking.hostName = "installation01";
 
   # This value determines the NixOS release from which the default
