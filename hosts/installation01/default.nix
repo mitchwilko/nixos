@@ -5,7 +5,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      # ./hardware.nix
+      ./hardware.nix
       ../../modules/common
       ../../modules/nixos
     ];
