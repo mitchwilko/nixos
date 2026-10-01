@@ -11,7 +11,7 @@
       ../../modules/common
       ../../modules/common/fonts
       ../../modules/nixos
-      ../../modules/nixos/distributedBuilder
+      # ../../modules/nixos/distributedBuilder
       ../../modules/nixos/gui/display_manager.nix
       ../../modules/nixos/gui/i3.nix
       ../../modules/nixos/audio
@@ -23,10 +23,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.binfmt = {
-  #  emulatedSystems = [ "aarch64-linux" ];
-  #  preferStaticEmulators = true;
-  # };
+  boot.binfmt = {
+   emulatedSystems = [ "aarch64-linux" ];
+   preferStaticEmulators = true;
+  };
 
   networking.hostName = "forge"; # Define your hostname.
 

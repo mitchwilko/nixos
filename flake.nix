@@ -105,6 +105,23 @@
         ]; 
       };
 
+      installation01 = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+      
+        modules = [
+          ./hosts/installation01/default.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.mitchw =
+              import ./home/mitchw;
+          }
+        ]; 
+      };
+
       nixvm = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
