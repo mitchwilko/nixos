@@ -91,8 +91,26 @@
         modules = [
           nixos-hardware.nixosModules.raspberry-pi-3
           "${nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+          # "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
 
           ./hosts/roland/default.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.mitchw =
+              import ./home/mitchw;
+          }
+        ]; 
+      };
+
+      installation04 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+      
+        modules = [
+          ./hosts/installation04/default.nix
 
           home-manager.nixosModules.home-manager
           {

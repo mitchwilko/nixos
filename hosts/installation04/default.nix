@@ -6,7 +6,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      # ./hardware.nix
+      ./hardware.nix
       ../../modules/common
       ../../modules/nixos
       ../../modules/nixos/networking/nat.nix
@@ -14,33 +14,17 @@
       ../../modules/nixos/containers/proxy.nix
     ];
 
-  # Raspberry Pi firmware
-  hardware.enableRedistributableFirmware = true;
-
-  # 1 GiB FAT32 boot partition + remaining space for NixOS
-  fileSystems = {
-    "/boot" = {
-      device = "/dev/disk/by-label/BOOT";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
-
-    "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
-      fsType = "ext4";
-    };
-  };
-
-  networking.hostName = "roland";
+  networking.hostName = "installation04";
   # myNetwork.externalInterface = "enp1s0"; # Required for containers
 
-  nixpkgs.buildPlatform = "x86_64-linux";
+  # Bootloader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/vda";
+  boot.loader.grub.useOSProber = true;
 
-  boot.zfs.forceImportRoot = false;
-  hardware.raspberry-pi.firmware = {
-    enable = true;
-    uboot.enable = true;
-  };
+  # Virtualisation Settings
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

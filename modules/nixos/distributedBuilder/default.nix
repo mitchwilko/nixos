@@ -20,7 +20,7 @@
           "aarch64-linux"
         ];
 
-        maxJobs = 8;
+        maxJobs = 6;
         speedFactor = 2;
 
         protocol = "ssh-ng";
