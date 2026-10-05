@@ -15,7 +15,7 @@
     ];
 
   networking.hostName = "installation04";
-  # myNetwork.externalInterface = "enp1s0"; # Required for containers
+  myNetwork.externalInterface = "enp1s0"; # Required for containers
 
   # Bootloader.
   boot.loader.grub.enable = true;

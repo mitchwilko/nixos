@@ -19,11 +19,11 @@
 
   # 1 GiB FAT32 boot partition + remaining space for NixOS
   fileSystems = {
-    "/boot" = {
-      device = "/dev/disk/by-label/BOOT";
-      fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
-    };
+  #   "/boot" = {
+  #     device = "/dev/disk/by-label/BOOT";
+  #     fsType = "vfat";
+  #     options = [ "fmask=0022" "dmask=0022" ];
+  #   };
 
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
@@ -37,6 +37,10 @@
   nixpkgs.buildPlatform = "x86_64-linux";
 
   boot.zfs.forceImportRoot = false;
+  boot = {
+    kernelParams = ["cma=320M"];
+    initrd.availableKernelModules = [ "xhci_pci" "usbhid" "usb_storage" ];
+  };
   hardware.raspberry-pi.firmware = {
     enable = true;
     uboot.enable = true;
