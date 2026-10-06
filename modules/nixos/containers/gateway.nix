@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  containers.cloudflare-proxy = {
+  containers.gateway = {
     autoStart = true;
 
     privateNetwork = true;
@@ -55,19 +55,21 @@
             auto_https off
           }
 
-          mpswiki.samwilko.com {
+          http://mpswiki2.samwilko.com {
             reverse_proxy forge.bream-betta.ts.net:8888
           }
 
-          # Add additional externally accessible services here.
-          #
-          # pyhttp.samwilko.com {
-          #   reverse_proxy thedawn.bream-betta.ts.net:8082
-          # }
-          #
-          # jupyter.samwilko.com {
-          #   reverse_proxy thedawn.bream-betta.ts.net:8084
-          # }
+          http://thedawn.samwilko.com {
+            reverse_proxy guac.bream-betta.ts.net:8080
+          }
+
+          http://mpswgit.samwilko.com {
+            reverse_proxy forge.bream-betta.ts.net:3000
+          }
+
+          http://stirlingpdf.samwilko.com {
+            reverse_proxy forge.bream-betta.ts.net:8083
+          }
 
           :80 {
             respond "Not Found" 404
@@ -113,11 +115,10 @@
           ExecStart = pkgs.writeShellScript "run-cloudflared" ''
             exec ${pkgs.cloudflared}/bin/cloudflared \
               tunnel run \
-              --no-autoupdate \
               --token "$(cat /run/secrets/cloudflare-tunnel-token)"
           '';
 
-          Restart = "on-failure";
+          Restart = "always";
           RestartSec = "5s";
         };
       };

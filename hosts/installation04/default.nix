@@ -13,6 +13,7 @@
       ../../modules/nixos/containers/dns.nix
       ../../modules/nixos/containers/proxy.nix
       ../../modules/nixos/containers/gateway.nix
+      ../../modules/nixos/containers/guac.nix
     ];
 
   networking.hostName = "installation04";
