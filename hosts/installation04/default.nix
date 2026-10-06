@@ -12,6 +12,7 @@
       ../../modules/nixos/networking/nat.nix
       ../../modules/nixos/containers/dns.nix
       ../../modules/nixos/containers/proxy.nix
+      ../../modules/nixos/containers/gateway.nix
     ];
 
   networking.hostName = "installation04";
