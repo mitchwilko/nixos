@@ -44,6 +44,14 @@
         AddKeysToAgent = "yes";
       };
 
+      "harvest" = {
+        HostName = "harvest.bream-betta.ts.net";
+        User = "mitchw";
+        IdentityFile = "~/.ssh/id_ed25519";
+        Port = 20273;
+        AddKeysToAgent = "yes";
+      };
+
       "installation01" = {
         HostName = "installation01.bream-betta.ts.net";
         User = "mitchw";

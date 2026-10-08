@@ -106,6 +106,26 @@
         ]; 
       };
 
+      harvest = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+      
+        modules = [
+          ./hosts/harvest/default.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.mitchw =
+                ./home/mitchw
+                ./home/mitchw/cli-extra
+                ./home/mitchw/gui-base
+                ./home/mitchw/gui-extra
+          }
+        ]; 
+      };
+
       installation04 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
       
@@ -128,23 +148,6 @@
       
         modules = [
           ./hosts/installation01/default.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.users.mitchw =
-              import ./home/mitchw;
-          }
-        ]; 
-      };
-
-      harvest = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-      
-        modules = [
-          ./hosts/harvest/default.nix
 
           home-manager.nixosModules.home-manager
           {
