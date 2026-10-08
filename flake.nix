@@ -117,11 +117,14 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.mitchw =
+            home-manager.users.mitchw = {
+              imports = [
                 ./home/mitchw
                 ./home/mitchw/cli-extra
                 ./home/mitchw/gui-base
                 ./home/mitchw/gui-extra
+              ];
+            };
           }
         ]; 
       };
