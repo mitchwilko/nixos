@@ -81,6 +81,11 @@
             }
           }
 
+          guac.samwilko.com {
+            rewrite * /guacamole{uri}
+            reverse_proxy guac.bream-betta.ts.net:8080
+          }
+
           pyhttp.samwilko.com {
             reverse_proxy thedawn.bream-betta.ts.net:8082
           }

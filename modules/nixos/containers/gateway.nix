@@ -55,20 +55,13 @@
             auto_https off
           }
 
-          http://mpswiki2.samwilko.com {
+          http://mpswiki.samwilko.com {
             reverse_proxy forge.bream-betta.ts.net:8888
           }
 
-          http://thedawn.samwilko.com {
+          http://guac.samwilko.com {
+            rewrite * /guacamole{uri}
             reverse_proxy guac.bream-betta.ts.net:8080
-          }
-
-          http://mpswgit.samwilko.com {
-            reverse_proxy forge.bream-betta.ts.net:3000
-          }
-
-          http://stirlingpdf.samwilko.com {
-            reverse_proxy forge.bream-betta.ts.net:8083
           }
 
           :80 {

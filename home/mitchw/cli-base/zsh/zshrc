@@ -79,6 +79,22 @@ rebuild() {
 # echo "=========================="
 # echo ""
 
+open-pdf() {
+    case "$(uname -s)" in
+        Darwin)
+            open "$@"
+            ;;
+        Linux)
+            setsid zathura "$@" >/dev/null 2>&1 </dev/null &
+            ;;
+        *)
+            print -u2 "Unsupported OS: $(uname -s)"
+            return 1
+            ;;
+    esac
+}
+
+
 # Only run fastfetch if NOT inside a tmux session
 if [ -z "$TMUX" ]; then
 	fastfetch
