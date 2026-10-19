@@ -30,6 +30,9 @@
     HandleLidSwitchDocked = "ignore";
   };
 
+  # Turn on graphics
+  hardware.graphics.enable = true;
+
   networking.hostName = "thedawn"; # Define your hostname.
 
   # networking = {

@@ -27,7 +27,7 @@
   services.spice-vdagentd.enable = true;
   hardware.graphics.enable = true;
 
-  networking.hostName = "roland"; # Define your hostname.
+  networking.hostName = "nixvm"; # Define your hostname.
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

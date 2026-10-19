@@ -28,6 +28,9 @@
    preferStaticEmulators = true;
   };
 
+  # Turn on graphics
+  hardware.graphics.enable = true;
+
   networking.hostName = "forge"; # Define your hostname.
 
   # This value determines the NixOS release from which the default
