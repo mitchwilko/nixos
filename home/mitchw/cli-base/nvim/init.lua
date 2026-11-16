@@ -184,3 +184,20 @@ local function toggle_comment_color()
 end
 
 vim.keymap.set("n", "<C-s>", toggle_comment_color, { noremap = true, silent = true })
+
+-- =====================================================
+-- Spell Checking 
+-- =====================================================
+
+if vim.env.NVIM_SPELL == "1" then
+    vim.opt.spell = true
+    vim.opt.spelllang = { "en_au" }
+    vim.opt.spellfile = vim.fn.getcwd() .. "/en.utf-8.add"
+end
+
+-- =====================================================
+-- Custom Commands
+-- =====================================================
+vim.api.nvim_create_user_command('MK', 'w | make', {})
+
+
