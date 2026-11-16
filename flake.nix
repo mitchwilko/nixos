@@ -222,6 +222,27 @@
           }
         ];
       };
+
+      Ellas-iMac = nix-darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+    
+        modules = [
+          ./hosts/Ellas-iMac/default.nix
+    
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+    
+            home-manager.users.mitchw = {
+              imports = [
+                ./home/mitchw
+                ./home/mitchw/cli-extra
+              ];
+            };
+          }
+        ];
+      };
     };
     
     packages.x86_64-linux = {
