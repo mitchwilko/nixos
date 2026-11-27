@@ -30,6 +30,7 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBJA3DKga9ZdOEUpH9nIxlaNicuk89DpM51zvpm3FTAG mitchell01wilkinson@gmail.com"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP8i6nY1QpPjKrO3MPRD+v2F+Hwk780MifnSydfuG1JC mitchell01wilkinson@gmail.com"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDjZELatikBEFA4wvpM5It6g1ADrgEtwpNHT9S9AhKXV throwaway"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDNmQ6Ityie/jHGGcPsBP5sjsw6+KZs5OO5Zo4Q3TD4J ellas imac"
   ];
 
   programs.ssh = {
