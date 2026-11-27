@@ -81,6 +81,10 @@
             }
           }
 
+          jellyfin.samwilko.com {
+            reverse_proxy jellyfin.bream-betta.ts.net:8089
+          }
+
           guac.samwilko.com {
             rewrite * /guacamole{uri}
             reverse_proxy guac.bream-betta.ts.net:8080
